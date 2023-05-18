@@ -1,9 +1,14 @@
 ---
+import HeaderLink from './HeaderLink.astro';
 const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+	<HeaderLink href="https://twitter.com/LYangguang" target="_blank">Twitter</HeaderLink>
+	<HeaderLink href="https://github.com/liyangguang" target="_blank">GitHub</HeaderLink>
+	<HeaderLink href="https://www.linkedin.com/in/yangguangli/" target="_blank">LinkedIn</HeaderLink>
+	<HeaderLink href="maito:liyangguangcn@gmail.com" target="_blank">Email</HeaderLink>
+	&copy;{today.getFullYear()} Yangguang Li
 </footer>
 <style>
 	footer {
