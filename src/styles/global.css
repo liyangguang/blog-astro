@@ -3,6 +3,11 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: Verdana, sans-serif;
 	margin: auto;
@@ -14,7 +19,15 @@ body {
 	overflow-wrap: break-word;
 	line-height: 1.5;
 	color: #444;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
 }
+
+body > main {
+	flex: 1;
+}
+
 h1,
 h2,
 h3,

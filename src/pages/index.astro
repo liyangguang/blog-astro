@@ -1,22 +1,17 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>Hey there! I'm Yangguang Li</h1>
-			<p>I write about web development, and other tech I come across.</p>
-			<p>(This site is under-migration...)</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout>
+	<h1>Hey there! I'm Yangguang Li</h1>
+	<p>
+		80% front-end engineer + 20% UX designer located in the San Francisco Bay Area.
+	</p>
+	<p>
+		Currently Web Eng @ Sutter Hill Venture, incubating AI focused startup ideas.
+		<br>
+		Ex - UXE TL and manager @ Google.
+	</p>
+	<p>I write about web development, and other tech I come across.</p>
+	<p>(This site is under-migration...)</p>
+</BaseLayout>
