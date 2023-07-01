@@ -6,14 +6,24 @@ import Tags from './Tags.astro';
 type Props = {posts: Array<CollectionEntry<'blog'>>};
 
 const posts = Astro.props.posts;
+
+// TODO: render description as markdown as well
 ---
 <ul>
   {
     posts.map((post) => (
       <li>
-        <FormattedDate date={post.data.pubDate} />
-        <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-        <Tags tags={post.data.tags}></Tags>
+        <div class="left">
+          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+        </div>
+        <div class="right">
+          <div class="metadata-row">
+            <FormattedDate date={post.data.pubDate} />
+            |
+            <Tags tags={post.data.tags}></Tags>
+          </div>
+          <p>{post.data.description}</p>
+        </div>
       </li>
     ))
   }
@@ -23,16 +33,53 @@ const posts = Astro.props.posts;
   ul {
     list-style-type: none;
     padding: unset;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
-  ul li {
-    display: flex;
+
+  li {
+    display: contents;
   }
-  ul li :global(time) {
-    flex: 0 0 130px;
-    font-style: italic;
-    color: #595959;
+
+  a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
   }
-  ul li a:visited {
-    color: #8e32dc;
+
+  .left, .right {
+    padding: 1rem 0 2rem;
+    border-top: 1px solid #000;
+  }
+
+  .left a {
+    font-size: 1.2em;
+    max-width: 32ch;
+    display: block;
+  }
+
+  .right {
+    padding-left: 2em;
+    font-size: 0.9em;
+  }
+
+  .metadata-row {
+    color: #777;
+  }
+
+  @media screen and (max-width: 1000px) {
+    ul {
+      grid-template-columns: 1fr;
+    }
+
+    .left {
+      padding-bottom: .5em;
+    }
+
+    .right {
+      padding-top: 0;
+      padding-left: 0;
+      border: 0;
+    }
   }
 </style>

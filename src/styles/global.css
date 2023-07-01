@@ -4,6 +4,11 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+:root {
+	--link-color: #3273dc;
+	--transition: .3s ease;
+}
+
 *, *::after, *::before {
 	box-sizing: border-box;
 }
@@ -12,7 +17,7 @@ body {
 	font-family: Verdana, sans-serif;
 	margin: auto;
 	padding: 20px;
-	max-width: 80ch;
+	max-width: 110ch;
 	text-align: left;
 	background-color: #fff;
 	word-wrap: break-word;
@@ -39,7 +44,7 @@ b {
 	color: #222;
 }
 a {
-	color: #3273dc;
+	color: var(--link-color);
 }
 nav a {
 	margin-right: 10px;

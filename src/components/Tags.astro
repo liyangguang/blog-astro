@@ -3,17 +3,34 @@ type Props = {tags: string[]};
 const { tags } = Astro.props;
 ---
 
-{
-  tags.map((tag) => (
-    <a href={`/tag/${tag}`}>{tag}</a>
-  ))
-}
+<ul>
+  {
+    tags.map((tag) => (
+      <li>
+        <a href={`/tag/${tag}`}>{tag}</a>
+      </li>
+    ))
+  }
+</ul>
 <style>
+  ul {
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    padding-left: 0;
+  }
+
 	a {
 		display: inline-block;
     border: 1px solid currentColor;
 		text-decoration: none;
-    padding: .1em .5em;
-    margin: 0 .3em;
+    padding: 0 .5em;
+    transition: background-color var(--transition), color var(--transition);
 	}
+
+  a:hover {
+    background: var(--link-color);
+    color: white;
+  }
 </style>

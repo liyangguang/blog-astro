@@ -10,16 +10,22 @@ export async function getStaticPaths() {
 	const tags = Array.from(new Set(posts.map((p) => p.data.tags).flat()));
 	return tags.map((tag) => ({
 		params: { tag },
-		props: { posts: posts.filter((p) => p.data.tags.includes(tag)) },
+		props: {
+			posts: posts
+					.filter((p) => p.data.tags.includes(tag))
+					.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+			tag,
+		},
 	}));
 }
 
-type Props = {posts: Array<CollectionEntry<'blog'>>};
+type Props = {posts: Array<CollectionEntry<'blog'>>, tag: string};
 
-const posts = Astro.props.posts;
+const {posts, tag} = Astro.props;
 ---
 
 <BaseLayout>
+	<h1>Tag: {tag}</h1>
 	<section>
 		<BlogList posts={posts}></BlogList>
 	</section>
