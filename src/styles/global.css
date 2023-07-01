@@ -13,24 +13,16 @@
 	box-sizing: border-box;
 }
 
-body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 110ch;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
-	min-height: 100dvh;
-	display: flex;
-	flex-direction: column;
+html {
+	scroll-behavior: smooth;
 }
 
-body > main {
-	flex: 1;
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #fff;
+	word-wrap: break-word;
+	line-height: 1.5;
+	color: #444;
 }
 
 h1,
@@ -42,6 +34,7 @@ h6,
 strong,
 b {
 	color: #222;
+	scroll-margin: 1em 0;
 }
 a {
 	color: var(--link-color);

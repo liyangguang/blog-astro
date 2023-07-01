@@ -17,11 +17,15 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { title, pubDate, updatedDate, heroImage } = post.data;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
 
 <BaseLayout>
 	<style slot="style">
+		:root {
+			--blog-max-width: 70ch;
+		}
+
 		.title {
 			font-size: 2em;
 			margin: 0.25em 0 0;
@@ -32,6 +36,50 @@ const { Content } = await post.render();
 		}
 		.last-updated-on {
 			font-style: italic;
+		}
+
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+			gap: 2em;
+		}
+
+		.content {
+			width: 100%;
+			max-width: var(--blog-max-width);
+		}
+
+		nav {
+			width: 100%;
+			font-size: .8em;
+			max-width: 20em;
+			position: sticky;
+			top: 0;
+			height: fit-content;
+			padding-top: 1em;
+		}
+
+		nav p {
+			margin: .5em 0;
+		}
+
+		@media screen and (max-width: 1000px) {
+			.wrapper {
+				flex-direction: column;
+			}
+
+			.content {
+				order: 2;
+				margin: 0 auto;
+			}
+
+			nav {
+				position: static;
+				padding: 0;
+				max-width: unset;
+				width: 100%;
+				margin: 0 auto;
+			}
 		}
 	</style>
 
@@ -46,9 +94,20 @@ const { Content } = await post.render();
 				</div>
 			)
 		}
-
+		&nbsp;
 		<Tags tags={post.data.tags}></Tags>
 		<hr />
-		<Content />
+		<div class="wrapper">
+			<div class="content">
+				<Content />
+			</div>
+			<nav>
+				{headings.map((h) => (
+					<p style={`padding-left: ${h.depth - 2}em`}>
+						<a href={`#${h.slug}`}>{h.text}</a>
+					</p>
+				))}
+			</nav>
+		</div>
 	</article>
 </BaseLayout>

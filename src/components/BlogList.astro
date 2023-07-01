@@ -19,7 +19,7 @@ const posts = Astro.props.posts;
         <div class="right">
           <div class="metadata-row">
             <FormattedDate date={post.data.pubDate} />
-            |
+            &nbsp;
             <Tags tags={post.data.tags}></Tags>
           </div>
           <p>{post.data.description}</p>
