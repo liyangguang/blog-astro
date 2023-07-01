@@ -1,0 +1,55 @@
+---
+/* This is individual blog page. */
+
+import { CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Tags from '../../components/Tags.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { title, pubDate, updatedDate, heroImage } = post.data;
+const { Content } = await post.render();
+---
+
+<BaseLayout>
+	<style slot="style">
+		.title {
+			font-size: 2em;
+			margin: 0.25em 0 0;
+		}
+		hr {
+			border-top: 1px solid #ddd;
+			margin: 1rem 0;
+		}
+		.last-updated-on {
+			font-style: italic;
+		}
+	</style>
+
+	<article>
+		{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+		<h1 class="title">{title}</h1>
+		{pubDate && <FormattedDate date={pubDate} />}
+		{
+			updatedDate && (
+				<div class="last-updated-on">
+					Last updated on <FormattedDate date={updatedDate} />
+				</div>
+			)
+		}
+
+		<h1>{post.data.title}</h1>
+		<Tags tags={post.data.tags}></Tags>
+		<hr />
+		<Content />
+	</article>
+</BaseLayout>
