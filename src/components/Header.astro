@@ -5,11 +5,10 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<div class="left">
-		<h2>{SITE_TITLE}</h2>
+		<a href="/">{SITE_TITLE}</a>
 	</div>
 	<nav>
-		<HeaderLink href="/">About</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
+		<HeaderLink href="/">Home</HeaderLink>
 	</nav>
 </header>
 <style>
@@ -20,5 +19,12 @@ import { SITE_TITLE } from '../consts';
 
 	.left {
 		flex: 1;
+	}
+
+	.left a {
+		font-weight: bold;
+		font-size: 1.2em;
+		color: inherit;
+		text-decoration: none;
 	}
 </style>

@@ -1,16 +1,33 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogList from '../components/BlogList.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <BaseLayout>
-	<h1>Hey there! I'm Yangguang Li</h1>
-	<p>
-		80% front-end engineer + 20% UX designer located in the San Francisco Bay Area.
-	</p>
-	<p>
-		Currently Web Eng @ Sutter Hill Venture, incubating AI focused startup ideas.
-		<br>
-		Ex - UX Engineer, Tech lead and manager @ Google.
-	</p>
-	<p>I write about web development and more.</p>
+	<style slot="style">
+		.intro {
+			padding: 5em 0;
+		}
+	</style>
+
+	<section class="intro">
+		<h1>Hey there! I'm Yangguang Li</h1>
+		<p>
+			80% front-end engineer + 20% UX designer located in the San Francisco Bay Area.
+		</p>
+		<p>
+			Currently Web Eng @ Sutter Hill Venture, incubating AI focused startup ideas.
+			<br>
+			Ex - UX Engineer, Tech lead and manager @ Google.
+		</p>
+		<p>I write about web development and more.</p>
+	</section>
+	<section>
+		<BlogList posts={posts}></BlogList>
+	</section>
 </BaseLayout>
