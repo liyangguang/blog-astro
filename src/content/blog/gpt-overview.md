@@ -1,5 +1,5 @@
 ---
-title: ChatGPT, GPT-3/4 - what are them and how to build applications with them? (Part I)
+title: GPT for web developers (Part I)
 pubDate: 2023-03-02
 tags:
   - AI
