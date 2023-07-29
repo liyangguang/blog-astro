@@ -31,8 +31,8 @@ knows this is authorized.
 
 ## A typical OAuth flow
 
-![oauth overview](../_assets/auth/overview1.png)
-![oauth overview](../_assets/auth/overview2.png)
+![oauth overview](../../assets/auth/overview1.png)
+![oauth overview](../../assets/auth/overview2.png)
 
 ### Token
 
@@ -65,7 +65,7 @@ In detail, there are two types of tokens - access token and refresh token.
 - Access token: used to access service
 - Refresh token: used to get a new access token when expires
 
-![oauth overview](../_assets/auth/token.png)
+![oauth overview](../../assets/auth/token.png)
 
 This is another security improvement. It's protecting against stealing other
 users' token.

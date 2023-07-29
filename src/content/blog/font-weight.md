@@ -26,7 +26,7 @@ Let's start from the easiest part - what does `<b>` do? It bolds the font, right
 
 Most frontend developer can answer this - browser stylesheet. Just like we have default margin on `<p>`, default underline on `<a>`, the default `font-weight` on `<b>` is defined in browser stylesheet.
 
-![b tag stylesheet](../_assets/font-weight/b-browser-style.png)
+![b tag stylesheet](../../assets/font-weight/b-browser-style.png)
 
 So there's no difference on the visually for `span {font-weight: bold}` vs `<b>`. (Unless you used some browser style reset that explicitly has a rule of `b {font-weight: something else}`).
 
@@ -46,11 +46,11 @@ Things gets a little interesting when the font weight you specified is not avail
 
 Normally, fonts come with variations in 2 axis - style (most commonly `italic` & `normal`) and weight (any values from 1 ~ 1000). If you ever downloaded a font (like from [Google fonts](https://fonts.google.com/specimen/Open+Sans)), you will see files like below. Each file is one variable. It's not simply a "Open Sans" file that can magically apply `font-weight` or `font-style` to change the appearance.
 
-![font files](../_assets/font-weight/font-files.png)
+![font files](../../assets/font-weight/font-files.png)
 
 Font's are created by people, and each font weight are designed separately. Like the example below, each weight is carefully designed to have the perfect balance. It's not simply "design a font, and magically just **bold** it". So it's common to see fonts with only some weights, and even just one weight.
 
-![different font weight design](../_assets/font-weight/font-weight-design.png)
+![different font weight design](../../assets/font-weight/font-weight-design.png)
 
 ### How font variations works with font loading
 
@@ -133,8 +133,8 @@ So far, we are still in the CSS code. It gets even more interesting with the rea
 
 Try toggle the 2 `@import` rules. You can see the `font-weight: 700` on the same font can be very different thing based on what you load.
 
-![codepen real](../_assets/font-weight/codepen-real.png)
-![codepen faux](../_assets/font-weight/codepen-faux.png)
+![codepen real](../../assets/font-weight/codepen-real.png)
+![codepen faux](../../assets/font-weight/codepen-faux.png)
 
 Both code has the rule `.weight {font-weight: 700}`, but renders very differently. When the font weight is unavailable, browser will try to bold it (called *faux*), but usually do a poor job. The exact result depends on the font, and likely the browser. (some only bolds a little, some bolds a lot. either way, it's not a bold designed by a typography designer)
 
@@ -148,8 +148,8 @@ When browser see `p {font-family: Roboto, sans-serif;}` it goes to look for `Rob
 
 You can use your browser devtool to check if you are using any local fonts. Go to "Element" tab and go to "Computed", scroll down to the bottom, it shows "Rendered Fonts". Below are two examples: one with the font loaded in my CSS, one without. Although in the 2nd example, the text renders Roboto for me, but it won't for anyone who didn't install Roboto font on the system.
 
-![render network](../_assets/font-weight/render-network.png)
-![render local](../_assets/font-weight/render-local.png)
+![render network](../../assets/font-weight/render-network.png)
+![render local](../../assets/font-weight/render-local.png)
 
 > Set proper fallback when using `font-family` - `p {font-family: Roboto, sans-serif;}`
 
@@ -157,7 +157,7 @@ The best practice is at least include the font type (Sans-serif/Serif/Mono), so 
 
 You can also use the same devtool "Rendered Fonts" to know which fallback font is currently rendered. Below, I set it to a font not in my CSS nor on my system, so it falls back to my browser's default sans-serif - `Helvetica`.
 
-![render local](../_assets/font-weight/render-fallback.png)
+![render local](../../assets/font-weight/render-fallback.png)
 
 ## The end
 

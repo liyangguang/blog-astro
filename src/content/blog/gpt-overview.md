@@ -49,7 +49,7 @@ As the last point above noted, GPT is a LLM from OpenAI. In detail, when we talk
 
 See a the chart of GPT model family as of Feb 2023 below.
 
-![GPT-3 models](../_assets/gpt/models.png)
+![GPT-3 models](../../assets/gpt/models.png)
 
 ## How does GPT work?
 
@@ -150,7 +150,7 @@ Just with a few examples (called `few-shot` in LLM), you got a English-Chinese t
 
 Text completion is the basis of GPT-3. Looking at this chart again:
 
-![GPT-3 models](../_assets/gpt/models.png)
+![GPT-3 models](../../assets/gpt/models.png)
 
 Most of the models here are older versions in the same group, but all the highlighted ones are popular / up-to-date, and for different purposes.
 
@@ -243,7 +243,7 @@ The simplicity of it makes the `prompt` extremely important. Thus, we need caref
 
 For many use cases, you want to control the answer - not simply want it to "auto-complete" based on the whole of training data. So you need to craft the prompt well. I found this annotated prompt of DeepMind Sparrow very informative (one part of it):
 
-![Prompt annotation](../_assets/gpt/prompt-annotation.png)
+![Prompt annotation](../../assets/gpt/prompt-annotation.png)
 
 See the full prompt [here](https://lifearchitect.ai/sparrow/). (Click on `Download the DeepMind Sparrow Prompt - Annotated by Alan` to see the full annotation)
 

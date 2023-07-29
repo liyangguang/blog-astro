@@ -29,7 +29,7 @@ Let's start with creating a date - `new Date()`, pretty straightforward, right? 
 
 The above is what your current browser parses those. Different browsers may parse some of them differently. For comparison, below is what Chrome 86 Mac renders. (Timezone may cause your result different from mine as well, but the only point of interests are whether the hour is 0)
 
-![new date results](../_assets/date-new.png)
+![new date results](../../assets/date-new.png)
 
 How many answers did you get right? Let's breakdown these traps:
 

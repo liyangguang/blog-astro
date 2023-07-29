@@ -18,7 +18,7 @@ If you ask a random web developer to list framework/library, I'm sure most peopl
 - Angular: 63K
 - Svelte: 40k
 
-![state of js 2019](../_assets/vue-satisfaction.png)
+![state of js 2019](../../assets/vue-satisfaction.png)
 
 Vue actually has the most stars. And in [state of js 2019](https://2019.stateofjs.com/front-end-frameworks/), Vue is the 3rd well-knwon framework, and the **highest satisfaction** among developers used it. I definitely "+1" this! I've built many websites/webapps using React, Angular (1 and 2+), Vue, LitElement. Not only personal projects, but real projects with thousands of users. (I just realized I happened to have thousands+ users apps on each of the 4 frameworks, so I guess I'm somewhat qualified to comment on this topic :P)
 
@@ -273,7 +273,7 @@ export default {
 
 If you want to have a more complex set up, vue has a great CLI, with user friendly UI. It wraps npm, webpack, and various plug-ins for you. You can pick technologies, config plugins, add npm packages all in a UI.
 
-![vue-cli](../_assets/vue-cli.png)
+![vue-cli](../../assets/vue-cli.png)
 
 ## Ecosystem
 
