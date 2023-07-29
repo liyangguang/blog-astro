@@ -10,7 +10,7 @@ description: My thoughts on some of the common CSS structures
 
 Many backend engineer think CSS is a terrible *thing* (many disagree that it's a programming language, thus just calling it a *thing*). And there are countless memes about how terrible CSS is.
 
-![css meme](../assets/css-meme.gif)
+![css meme](@assets/css-meme.gif)
 
 It mostly comes down to:
 

@@ -56,7 +56,7 @@ When using Vue.js, you can set multiple CSS variables automatically by applying 
 
 ## Advantage 3: edit inside browser devtools
 
-![Devtools](../assets/css-variables-devtools.png)
+![Devtools](@assets/css-variables-devtools.png)
 
 Not a huge deal, but it's very convenient to be able to modify CSS variables inside browser devtools. You can change the value of any variable, or assign variables to any element to test it out on the fly.
 In comparison, SASS variables are just compiled into values, and there's no way to play with SASS variables in devtools.

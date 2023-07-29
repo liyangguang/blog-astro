@@ -22,7 +22,7 @@ A few weeks ago, I have almost zero knowledge about ML/AI. Now, I have an overal
 
 1. **Artificial Intelligence (AI) - Machine Learning (ML) - Deep Leanring**: These 3 are in a relationship shown below.
 
-    ![AI-ML-DL](../assets/gpt/ai-ml-dl.jpg)
+    ![AI-ML-DL](@assets/gpt/ai-ml-dl.jpg)
 
     - AI: can be very explicit. E.g. you can write a tic-tac-toe game AI, where you list every single possible situations of the game, and write down where to put the next step for each of them - it's still an AI.
     - ML & DL: as the name suggests - it learns itself. You don't explicitly tell it how to do everything - you set rules, and it's trained against data, or run countlessly itself to find a solution itself. [Example of AI learn to play Flappy Bird, from Code Bullet](https://youtu.be/WSW-5m8lRMs?t=253)
@@ -49,13 +49,13 @@ As the last point above noted, GPT is a LLM from OpenAI. In detail, when we talk
 
 See a the chart of GPT model family as of Feb 2023 below.
 
-![GPT-3 models](../assets/gpt/models.png)
+![GPT-3 models](@assets/gpt/models.png)
 
 ## How does GPT work?
 
 Before talking about GPT-3 - have you ever played with your phone keyboard like this: type any word and keep tapping the 1st auto-completion suggestion word.
 
-![keyboard auto complete](../assets/gpt/auto-complete.gif)
+![keyboard auto complete](@assets/gpt/auto-complete.gif)
 
 The suggestions are useful in some cases, but rarely make sense for a long series of usage. And...
 
@@ -150,7 +150,7 @@ Just with a few examples (called `few-shot` in LLM), you got a English-Chinese t
 
 Text completion is the basis of GPT-3. Looking at this chart again:
 
-![GPT-3 models](../assets/gpt/models.png)
+![GPT-3 models](@assets/gpt/models.png)
 
 Most of the models here are older versions in the same group, but all the highlighted ones are popular / up-to-date, and for different purposes.
 
@@ -243,7 +243,7 @@ The simplicity of it makes the `prompt` extremely important. Thus, we need caref
 
 For many use cases, you want to control the answer - not simply want it to "auto-complete" based on the whole of training data. So you need to craft the prompt well. I found this annotated prompt of DeepMind Sparrow very informative (one part of it):
 
-![Prompt annotation](../assets/gpt/prompt-annotation.png)
+![Prompt annotation](@assets/gpt/prompt-annotation.png)
 
 See the full prompt [here](https://lifearchitect.ai/sparrow/). (Click on `Download the DeepMind Sparrow Prompt - Annotated by Alan` to see the full annotation)
 
