@@ -5,6 +5,7 @@ import { CollectionEntry, getCollection } from 'astro:content';
 import BaseLayout from '../../BaseLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Tags from '../../components/Tags.astro';
+import Toc from './Toc.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -72,14 +73,6 @@ const { Content, headings } = await post.render();
 				order: 2;
 				margin: 0 auto;
 			}
-
-			nav {
-				position: static;
-				padding: 0;
-				max-width: unset;
-				width: 100%;
-				margin: 0 auto;
-			}
 		}
 	</style>
 
@@ -101,13 +94,7 @@ const { Content, headings } = await post.render();
 			<div class="content">
 				<Content />
 			</div>
-			<nav>
-				{headings.map((h) => (
-					<p style={`padding-left: ${h.depth - 2}em`}>
-						<a href={`#${h.slug}`}>{h.text}</a>
-					</p>
-				))}
-			</nav>
+			<Toc pageHeadings={headings}>
 		</div>
 	</article>
 </BaseLayout>

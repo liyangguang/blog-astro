@@ -22,7 +22,7 @@ A few weeks ago, I have almost zero knowledge about ML/AI. Now, I have an overal
 
 1. **Artificial Intelligence (AI) - Machine Learning (ML) - Deep Leanring**: These 3 are in a relationship shown below.
 
-    <img src="../assets/gpt/ai-ml-dl.jpg" style="max-height: 30em; margin: 1em auto; display: block;" alt="AI-ML-DL">
+    ![AI-ML-DL](../assets/gpt/ai-ml-dl.jpg)
 
     - AI: can be very explicit. E.g. you can write a tic-tac-toe game AI, where you list every single possible situations of the game, and write down where to put the next step for each of them - it's still an AI.
     - ML & DL: as the name suggests - it learns itself. You don't explicitly tell it how to do everything - you set rules, and it's trained against data, or run countlessly itself to find a solution itself. [Example of AI learn to play Flappy Bird, from Code Bullet](https://youtu.be/WSW-5m8lRMs?t=253)
@@ -55,7 +55,7 @@ See a the chart of GPT model family as of Feb 2023 below.
 
 Before talking about GPT-3 - have you ever played with your phone keyboard like this: type any word and keep tapping the 1st auto-completion suggestion word.
 
-<img src="../assets/gpt/auto-complete.gif" style="max-height: 40em; margin: 0 auto; display: block;" alt="keyboard auto complete">
+![keyboard auto complete](../assets/gpt/auto-complete.gif)
 
 The suggestions are useful in some cases, but rarely make sense for a long series of usage. And...
 
