@@ -6,7 +6,7 @@ tags:
 description: A short blog to describe how I structure my CSS
 ---
 
-![css meme](../../assets/css-meme.gif)
+![css meme](../assets/css-meme.gif)
 
 > If you haven't, check out my thoughts on [BEM, tailwind, and more](../../../2021/06/bem-vs-atomic-vs-tailwind-css/)
 

@@ -20,7 +20,7 @@ I initially thought about buying a pre-build PC. But after a very breif search, 
 
 If you never built a PC before, watch a few YouTube videos on how to build PC. It's really not rocket science - there're only less than 10 pieces you need to connect together. Most connections are in totally different shape, and fool-proof design, so you can hardly plug it the wrong way.
 
-![pc parts](../../assets/pc-parts.jpg)
+![pc parts](../assets/pc-parts.jpg)
 
 ### CPU
 

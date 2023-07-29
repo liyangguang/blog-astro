@@ -22,7 +22,7 @@ This is the most well-known type - whether you heard of the terms "REST", "RESTf
 
 To start, this is a basic structure of REST APIs.
 
-![REST API](../../assets/api-rest.png)
+![REST API](../assets/api-rest.png)
 
 ### Implementation
 
@@ -119,7 +119,7 @@ With compiled proto, all fields in `message` will have it's getter and setters -
 
 Once you have the proto definition, you load the proto file into your backend to implement the API features. And you run a command to generate the client-side code and use that in the frontend code. 
 
-![REST API](../../assets/api-grpc.png)
+![REST API](../assets/api-grpc.png)
 
 The detailed code is a bit long for a blog, you can check out the full process in [this GitHub example](https://github.com/grpc/grpc-web/tree/master/net/grpc/gateway/examples/helloworld), or the [official tutorial](https://grpc.io/docs/tutorials/basic/node/#defining-the-service).
 

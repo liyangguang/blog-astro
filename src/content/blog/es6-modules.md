@@ -89,11 +89,11 @@ For older browsers doesn’t support ES6 module, you need to bundle them into on
 
 This is how the code works:
 
-![Code garph](../../assets/es6-modules-code-graph.png)
+![Code garph](../assets/es6-modules-code-graph.png)
 
 Here's how old browsers and modern browsers load the above code:
 
-![browser comparison](../../assets/es6-modules-browser-comparison.png)
+![browser comparison](../assets/es6-modules-browser-comparison.png)
 
 - On browsers that supports ES6 module, code inside `nomodule` will be ignored. And only `type="module"` will be executed. As a result, users using modern browsers loads ES6 modules on their browsers.
 - On browser that doesn’t support ES6 module. They don’t understand `type="module"`, so they just ignore the tag. And they also don’t know about `nomodule`, so they just load and execute the bundle file like any other normal js file.
