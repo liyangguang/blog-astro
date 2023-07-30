@@ -3,7 +3,6 @@ title: Building a gaming PC
 pubDate: 2020-01-27
 tags:
   - Hobby
-  - DIY
 description: A summary of how I chose the part for my gaming PC build.
 ---
 

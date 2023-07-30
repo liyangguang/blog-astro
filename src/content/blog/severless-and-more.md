@@ -2,7 +2,7 @@
 title: Serverless vs cloud vs server
 pubDate: 2020-12-06
 tags:
-  - Server-side
+  - Backend
 description: Is serverless a fad or future? Should I use serverless or cloud, or even my own server? What does big companies do?
 ---
 

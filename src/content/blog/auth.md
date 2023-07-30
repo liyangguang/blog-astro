@@ -3,6 +3,7 @@ title: Authentication and Authorization
 pubDate: 2021-06-01
 tags:
   - JavaScript
+  - Backend
 description: Auth is a complex concept for many webdevs, including myself. Here's some of my learning notes.
 ---
 

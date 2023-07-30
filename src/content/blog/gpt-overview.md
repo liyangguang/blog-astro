@@ -1,5 +1,5 @@
 ---
-title: GPT for web developers (Part I)
+title: LLM for web developers (Part I - overview)
 pubDate: 2023-03-02
 tags:
   - LLM / GPT
