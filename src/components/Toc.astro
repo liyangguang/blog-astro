@@ -43,6 +43,7 @@ const { pageHeadings } = Astro.props;
   a {
     font-size: .9em;
     text-decoration: none;
+    font-weight: normal;
   }
 
   a:hover {
@@ -58,6 +59,7 @@ const { pageHeadings } = Astro.props;
       if (entry.isIntersecting) {
         document.querySelectorAll("#toc a").forEach((e) => e.classList.remove("active"));
         tocHeadingEl.classList.add("active");
+        return;
       }
     }
   };
@@ -68,5 +70,5 @@ const { pageHeadings } = Astro.props;
   };
   const headingObserver = new IntersectionObserver(setCurrent, observerOption);
   document
-    .querySelectorAll("article :is(h2,h3,h4)").forEach((heading) => headingObserver.observe(heading));
+    .querySelectorAll(":is(h2,h3,h4)").forEach((heading) => headingObserver.observe(heading));
 </script>

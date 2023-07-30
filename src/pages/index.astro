@@ -8,10 +8,11 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<BaseLayout>
+<BaseLayout hideHeader>
 	<style slot="style">
 		.intro {
 			padding: 5em 0;
+			font-size: 1.1em;
 		}
 		
 		.note {
@@ -19,7 +20,7 @@ const posts = (await getCollection('blog')).sort(
 		}
 	</style>
 
-	<section class="intro">
+	<div class="intro">
 		<h1>Hey there! I'm Yangguang Li</h1>
 		<p>
 			80% web developer + 20% UX designer located in the San Francisco Bay Area.
@@ -31,8 +32,8 @@ const posts = (await getCollection('blog')).sort(
 		</p>
 		<p>I write about tech I learned, most about web development.</p>
 		<p class="note">(I just rebuit this site, and still touching up things 🚧😊)</p>
-	</section>
-	<section>
+	</div>
+	<main>
 		<BlogList posts={posts}></BlogList>
-	</section>
+	</main>
 </BaseLayout>

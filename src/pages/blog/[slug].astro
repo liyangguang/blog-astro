@@ -27,22 +27,25 @@ const { Content, headings } = await post.render();
 			--blog-max-width: 70ch;
 		}
 
-		.title {
-			font-size: 2em;
-			margin: 3em 0 .5em;
+		h1 {
+			max-width: 30ch;
+			/* Progressive enhancement, it's okay if none of them works. */
+			text-wrap: balance;
+			text-wrap: pretty;
 		}
-		hr {
-			border-top: 1px solid #ddd;
-			margin: 1rem 0;
-		}
+
 		.last-updated-on {
 			font-style: italic;
 		}
 
 		.wrapper {
 			display: grid;
-			grid-template-columns: 1fr 300px;
+			/* https://css-tricks.com/preventing-a-grid-blowout/ */
+			grid-template-columns: minmax(0, 1fr) 300px;
 			gap: 2em;
+			border-top: 1px solid var(--border);
+			margin-top: 2em;
+			padding-top: 1em;
 		}
 
 		.content {
@@ -62,9 +65,9 @@ const { Content, headings } = await post.render();
 		}
 	</style>
 
-	<article>
+	<main>
 		{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-		<h1 class="title">{title}</h1>
+		<h1>{title}</h1>
 		{pubDate && <FormattedDate date={pubDate} />}
 		{
 			updatedDate && (
@@ -75,12 +78,11 @@ const { Content, headings } = await post.render();
 		}
 		&nbsp;
 		<Tags tags={post.data.tags}></Tags>
-		<hr />
 		<div class="wrapper">
 			<div class="content">
 				<Content />
 			</div>
 			<Toc pageHeadings={headings}>
 		</div>
-	</article>
+	</main>
 </BaseLayout>

@@ -33,34 +33,32 @@ const posts = Astro.props.posts;
   ul {
     list-style-type: none;
     padding: unset;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
   }
 
   li {
-    display: contents;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    padding: 1em 0;
+    border-top: 1px solid var(--border);
   }
 
-  a {
-    color: inherit;
-    font-weight: bold;
-    text-decoration: none;
-  }
+  
+	a, a:visited {
+		text-decoration: none;
+		font-weight: bold;
+		color: var(--text);
+		transition: color var(--transition);
+	}
 
-  .left, .right {
-    padding: 1rem 0 2rem;
-    border-top: 1px solid #000;
-  }
+	a:hover {
+		color: var(--accent);
+	}
 
   .left a {
-    font-size: 1.2em;
+    font-size: 1.4em;
     max-width: 32ch;
     display: block;
-  }
-
-  .right {
-    padding-left: 2em;
-    font-size: 0.9em;
   }
 
   .metadata-row {
@@ -68,18 +66,8 @@ const posts = Astro.props.posts;
   }
 
   @media screen and (max-width: 1000px) {
-    ul {
+    li {
       grid-template-columns: 1fr;
-    }
-
-    .left {
-      padding-bottom: .5em;
-    }
-
-    .right {
-      padding-top: 0;
-      padding-left: 0;
-      border: 0;
     }
   }
 </style>
