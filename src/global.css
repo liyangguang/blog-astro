@@ -27,3 +27,10 @@ body > header {
 	border-bottom: 0;
 	padding: 2em;
 }
+
+h1,
+h2,
+h3,
+h4 {
+	scroll-margin: 1em 0;
+}

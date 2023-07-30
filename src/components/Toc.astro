@@ -5,39 +5,24 @@ export type Props = {
 const { pageHeadings } = Astro.props;
 ---
 
-<nav id="toc">
-  <ul>
-    {
-      pageHeadings.map((h) => {
-        return (
-          h.depth < 4 && (
-            <li style={`padding-left: ${h.depth - 2}em`}>
-              <a href={`#${h.slug}`}>{h.text}</a>
-            </li>
-          )
-        );
-      })
-    }
-  </ul>
-</nav>
+<ul id="toc">
+  {
+    pageHeadings.map((h) => {
+      return (
+        h.depth < 4 && (
+          <li style={`padding-left: ${h.depth - 2}em`}>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        )
+      );
+    })
+  }
+</ul>
 
 <style>
-  .active {
-    font-weight: bold;
-  }
-
   ul {
     list-style: none;
-  }
-
-  nav {
-    position: sticky;
-    top: 0;
     padding: 0;
-    max-width: unset;
-    width: 100%;
-    margin: 0 auto;
-    height: fit-content;
   }
 
   a {
@@ -49,6 +34,16 @@ const { pageHeadings } = Astro.props;
   a:hover {
     text-decoration: underline;
   }
+
+  .active {
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 1000px) {
+		.active {
+      font-weight: normal;
+    }
+	}
 </style>
 <script>
   const setCurrent: IntersectionObserverCallback = (entries) => {
