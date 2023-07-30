@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../BaseLayout.astro';
+import BaseLayout from '@src/BaseLayout.astro';
 import BlogList from '@components/BlogList.astro';
 
 const posts = (await getCollection('blog')).sort(
@@ -13,6 +13,10 @@ const posts = (await getCollection('blog')).sort(
 		.intro {
 			padding: 5em 0;
 		}
+		
+		.note {
+			font-size: .9em;
+		}
 	</style>
 
 	<section class="intro">
@@ -21,11 +25,12 @@ const posts = (await getCollection('blog')).sort(
 			80% web developer + 20% UX designer located in the San Francisco Bay Area.
 		</p>
 		<p>
-			Currently Web Eng @ Sutter Hill Venture, incubating AI focused startup ideas.
+			Currently Web Eng @ <a href="https://shv.com" target="_blank" rel="noreferrer">Sutter Hill Venture</a>, incubating AI focused startup ideas.
 			<br>
-			Ex - UX Engineer, Tech lead and manager @ Google.
+			Ex - UX Engineer, Tech lead and manager @ <a href="https://www.google.com" target="_blank" rel="noreferrer">Google</a>.
 		</p>
-		<p>I write about web development and more.</p>
+		<p>I write about tech I learned, most about web development.</p>
+		<p class="note">(I just rebuit this site, and still touching up things 🚧😊)</p>
 	</section>
 	<section>
 		<BlogList posts={posts}></BlogList>

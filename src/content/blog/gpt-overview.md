@@ -2,9 +2,7 @@
 title: GPT for web developers (Part I)
 pubDate: 2023-03-02
 tags:
-  - AI
-  - LLM
-  - GPT
+  - LLM / GPT
 description: My learning notes from zero AI knowledge, to build applications using GPT.
 ---
 

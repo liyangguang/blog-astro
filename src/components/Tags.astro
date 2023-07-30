@@ -1,4 +1,6 @@
 ---
+import { slugify } from '@src/shared';
+
 type Props = {tags: string[]};
 const { tags } = Astro.props;
 ---
@@ -7,7 +9,7 @@ const { tags } = Astro.props;
   {
     tags.map((tag) => (
       <li>
-        <a href={`/tag/${tag}`}>{tag}</a>
+        <a href={`/tag/${slugify(tag)}`}>{tag}</a>
       </li>
     ))
   }

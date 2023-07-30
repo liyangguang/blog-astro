@@ -2,14 +2,15 @@
 /* This is the blog list page. */
 
 import { CollectionEntry, getCollection } from 'astro:content';
-import BaseLayout from '../../BaseLayout.astro';
+import BaseLayout from '@src/BaseLayout.astro';
+import { slugify } from '@src/shared';
 import BlogList from '@components/BlogList.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	const tags = Array.from(new Set(posts.map((p) => p.data.tags).flat()));
 	return tags.map((tag) => ({
-		params: { tag },
+		params: { tag: slugify(tag) },
 		props: {
 			posts: posts
 					.filter((p) => p.data.tags.includes(tag))
@@ -25,6 +26,12 @@ const {posts, tag} = Astro.props;
 ---
 
 <BaseLayout>
+	<style>
+		h1 {
+			font-size: 2em;
+			margin: 2em 0;
+		}
+	</style>
 	<h1>Tag: {tag}</h1>
 	<section>
 		<BlogList posts={posts}></BlogList>

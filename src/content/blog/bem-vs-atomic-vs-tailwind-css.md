@@ -120,7 +120,7 @@ Nay:
 
 Some argues this is getting back to inline styles - [One of the first issues opened on tailwind](https://github.com/tailwindlabs/discuss/issues/3) 😂 . (I agree it's much better than inline styles)
 
-> Checkout how a CSS prank turns out very similar as what Tailwind is [Funny CSS to Tailwind](../../../2021/06/funny-css-to-tailwind)
+> Checkout how a CSS prank turns out very similar as what Tailwind is [Funny CSS to Tailwind](../funny-css-to-tailwind)
 
 ## Atomic
 
@@ -165,4 +165,4 @@ Nay:
 
 1. Harder to reason about each element by reading the CSS
 
-## Check out [how I structure my CSS](../../../2021/06/how-i-write-css)
+## Check out [how I structure my CSS](../how-i-write-css)

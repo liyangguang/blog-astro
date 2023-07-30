@@ -92,4 +92,4 @@ Wait a second - isn't this the same as what tailwindcss doing? The only differen
 
 I just found it quite funny that a funny/prank/crazy CSS has so much in common with a very useful framework many devs like.
 
-Also check out my comparison of Tailwind with other CSS structures - [BEM, tailwind, and more](../../../2021/06/bem-vs-atomic-vs-tailwind-css/), and [how I structure my CSS](../../../2021/06/how-i-write-css)
+Also check out my comparison of Tailwind with other CSS structures - [BEM, tailwind, and more](../bem-vs-atomic-vs-tailwind-css/), and [how I structure my CSS](../how-i-write-css)

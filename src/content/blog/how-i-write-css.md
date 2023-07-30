@@ -8,7 +8,7 @@ description: A short blog to describe how I structure my CSS
 
 ![css meme](@assets/css-meme.gif)
 
-> If you haven't, check out my thoughts on [BEM, tailwind, and more](../../../2021/06/bem-vs-atomic-vs-tailwind-css/)
+> If you haven't, check out my thoughts on [BEM, tailwind, and more](../bem-vs-atomic-vs-tailwind-css/)
 
 ## How I structure my CSS
 
@@ -66,7 +66,7 @@ img {
 
 ### Global CSS file - CSS variables
 
-I really like CSS variables (Check out my blog on [CSS variables](../../../2020/05/css-variable)). So I always use it for global themes. Some common variables I have:
+I really like CSS variables (Check out my blog on [CSS variables](../css-variable)). So I always use it for global themes. Some common variables I have:
 
 ```css
 :root {
