@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@src/BaseLayout.astro';
 import BlogList from '@components/BlogList.astro';
+import Background3D from '@components/Background3D.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -36,4 +37,5 @@ const posts = (await getCollection('blog')).sort(
 	<main>
 		<BlogList posts={posts}></BlogList>
 	</main>
+	<Background3D />
 </BaseLayout>
