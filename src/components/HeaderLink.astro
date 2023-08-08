@@ -1,17 +1,18 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<'a'> & {external?: boolean};
 
-const { href, class: className, ...props } = Astro.props;
+const { href, class: className, external, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
+<a href={href} class:list={[className, { active: isActive }]} target={external ? '_blank' : '_self'} rel="noreferrer" {...props}>
 	<slot />
 </a>
+
 <style>
 	a {
 		display: inline-block;
