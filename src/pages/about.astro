@@ -2,9 +2,10 @@
 import BaseLayout from '@src/BaseLayout.astro';
 
 const CONTACT = [
+	{label: '812-360-1622', url: 'tel:+18123601622'},
 	{label: 'https://yangguang.li', url: 'https://yangguang.li'},
 	{label: 'liyangguangcn@gmail.com', url: 'mailto:liyangguangcn@gmail.com'},
-	{label: '812-360-1622', url: 'tel:+18123601622'},
+	{label: 'https://linkedin.com/in/yangguangli/', url: 'https://linkedin.com/in/yangguangli/'},
 ];
 
 // TODO: refind content
@@ -39,15 +40,6 @@ const EXPERIENCES = [
 	 ⚬ (continued) Data story telling / interactive visualization series.`,
 		],
 	},
-	{
-		company: 'LexusNexus',
-		position: 'Interaction design & develop intern',
-		time: 'Summer 2015',
-		location: 'Dayton, OH',
-		content: [
-			``,
-		],
-	},
 ];
 
 const EDUCATION = [
@@ -55,11 +47,13 @@ const EDUCATION = [
 		university: 'Indiana University',
 		program: 'M.S. in Human-Computer Interaction Design',
 		time: 'Aug 2014 - May 2016',
+		location: 'Bloomington, IN, USA',
 	},
 	{
 		university: 'Beijing University of Posts and Telecommunications',
-		program: 'B.E. in Industrial Design (Interaction design track)',
+		program: 'B.E. in Industrial Design - Interaction design track',
 		time: 'Aug 2010 - Jun 2014',
+		location: 'Beijing, China',
 	},
 ];
 ---
@@ -77,7 +71,7 @@ const EDUCATION = [
 
 		.section-title,
 		.position,
-		.subtitle {
+		.metadata {
 			margin: 0.3em 0;
 		}
 
@@ -90,7 +84,7 @@ const EDUCATION = [
 			font-weight: bold;
 		}
 
-		.subtitle {
+		.metadata {
 			opacity: 0.7;
 			font-size: .9em;
 		}
@@ -111,8 +105,10 @@ const EDUCATION = [
 
 		.first-name,
 		.last-name {
+			display: block;
 			font-size: 2em;
 			line-height: 1;
+			margin-bottom: .1em;
 		}
 
 		.contacts li {
@@ -153,8 +149,8 @@ const EDUCATION = [
 			<div>
 				<p class="section-title">{item.company}</p>
 				<p class="position">{item.position}</p>
-				<p class="subtitle">{item.time}</p>
-				<p class="subtitle">{item.location}</p>
+				<p class="metadata">{item.time}</p>
+				<p class="metadata">{item.location}</p>
 			</div>
 			<ul class="text-content">
 				{item.content.map((item) => <li>{item}</li>)}
@@ -165,7 +161,7 @@ const EDUCATION = [
 			{EDUCATION.map((item) => 
 				<li>
 					<p>{item.program} | {item.university}</p>
-					<p class="subtitle">{item.time}</p>
+					<p class="metadata">{item.time} | {item.location}</p>
 				</li>
 			)}
 		</ul>
