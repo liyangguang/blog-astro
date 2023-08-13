@@ -5,7 +5,7 @@ import BlogList from '@components/BlogList.astro';
 import Works from '@components/Works.astro';
 import Background3D from '@components/Background3D.astro';
 
-const posts = (await getCollection('blog')).filter((blog) => blog.data.isFeatured).sort(
+const posts = (await getCollection('blog', ({data}) => data.isFeatured)).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -47,9 +47,9 @@ const posts = (await getCollection('blog')).filter((blog) => blog.data.isFeature
 			<p>I write about tech I learned, most about web development.</p>
 			<p class="note">(I just rebuit this site, and still touching up things 🚧😊)</p>
 		</div>
-		<h2>Works</h2>
+		<h2>Selected Works</h2>
 		<Works />
-		<h2>Featured blogs
+		<h2>Featured Blogs
 			<a href="/blog">View all</a>
 		</h2>
 		<BlogList posts={posts}></BlogList>
