@@ -4,6 +4,7 @@ pubDate: 2020-12-07
 tags:
   - JavaScript
 description: Do you know how to use `Date` in JavaScript? Is `new Date('2020-01-01')` the same as `new Date('2020-1-01')`? Here're the pitfalls I fell into... 
+isFeatured: true
 ---
 
 There are many weird edge, and imperfections in JavaScript, like `123 < undefined` and `123 > undefined` are both `false`, like `typeof null === 'object'`, `typeof undefined === 'undefined'`, and on and on. Many of those can be avoided if you have good coding practice, and with help of linter and/or typed language extensions like TypeScript. 

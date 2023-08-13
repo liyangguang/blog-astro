@@ -2,39 +2,56 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@src/BaseLayout.astro';
 import BlogList from '@components/BlogList.astro';
+import Works from '@components/Works.astro';
 import Background3D from '@components/Background3D.astro';
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog')).filter((blog) => blog.data.isFeatured).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<BaseLayout hideHeader>
+<BaseLayout>
 	<style slot="style">
 		.intro {
-			padding: 5em 0;
+			margin: 5em 0;
 			font-size: 1.1em;
 		}
 		
 		.note {
 			font-size: .9em;
 		}
+
+		h2 {
+			font-size: 1.7em;
+			margin-top: 5em;
+		}
+
+		h2 a {
+			font-size: 1.2rem;
+			margin-left: 1em;
+			text-decoration: none;
+		}
 	</style>
 
-	<div class="intro">
-		<h1>Hey there! I'm Yangguang Li</h1>
-		<p>
-			80% web developer + 20% UX designer located in the San Francisco Bay Area.
-		</p>
-		<p>
-			Currently Web Eng @ <a href="https://shv.com" target="_blank" rel="noreferrer">Sutter Hill Venture</a>, incubating AI focused startup ideas.
-			<br>
-			Ex - UX Engineer, Tech lead and manager @ <a href="https://www.google.com" target="_blank" rel="noreferrer">Google</a>.
-		</p>
-		<p>I write about tech I learned, most about web development.</p>
-		<p class="note">(I just rebuit this site, and still touching up things 🚧😊)</p>
-	</div>
 	<main>
+		<div class="intro">
+			<h1>Hey there! I'm Yangguang Li</h1>
+			<p>
+				I'm a frontend engineer and UX designer who brought many projects from 0 to 1.
+			</p>
+			<p>
+				Currently Web Eng @ <a href="https://shv.com" target="_blank" rel="noreferrer noopener">Sutter Hill Venture</a>, incubating AI focused startup ideas.
+				<br>
+				Ex - UX Engineer, Tech lead and manager @ <a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Google</a>.
+			</p>
+			<p>I write about tech I learned, most about web development.</p>
+			<p class="note">(I just rebuit this site, and still touching up things 🚧😊)</p>
+		</div>
+		<h2>Works</h2>
+		<Works />
+		<h2>Featured blogs
+			<a href="/blog">View all</a>
+		</h2>
 		<BlogList posts={posts}></BlogList>
 	</main>
 	<Background3D />

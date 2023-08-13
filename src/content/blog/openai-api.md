@@ -4,6 +4,7 @@ pubDate: 2023-04-13
 tags:
   - LLM / GPT
 description: How to use OpenAI's GPT APIs, and techniques for specific use cases.
+isFeatured: true
 ---
 
 *Check out [Part I](../gpt-overview) for general knowledge about GPT.*

@@ -4,6 +4,7 @@ pubDate: 2020-05-17
 tags:
   - Backend
 description: A quick summary of the 3 different API solutions - REST, gRPC, and GraphQL.
+isFeatured: true
 ---
 
 REST, gRPC, and GraphQL are the three main solutions for APIs nowadays. In detail, they are 3 very different things (not even talking about implementation and how to use).

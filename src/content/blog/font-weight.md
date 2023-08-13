@@ -4,6 +4,7 @@ pubDate: 2022-02-16
 tags:
   - CSS
 description: font-weight might be one of the first things you learn about CSS. But there's so much details in it.
+isFeatured: true
 ---
 
 `font-weight` and `<b>` might be one of the first things you learn about HTML & CSS. But there's so much details in it. And there are many hoops you need to jump though to get a text rendered in bold!

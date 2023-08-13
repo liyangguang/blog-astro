@@ -4,13 +4,12 @@ pubDate: 2021-06-06
 tags:
   - CSS
 description: A short blog to describe how I structure my CSS
+isFeatured: true
 ---
 
 ![css meme](@assets/css-meme.gif)
 
 > If you haven't, check out my thoughts on [BEM, tailwind, and more](../bem-vs-atomic-vs-tailwind-css/)
-
-## How I structure my CSS
 
 When I write CSS, the two main goals are:
 
@@ -19,7 +18,7 @@ When I write CSS, the two main goals are:
 
 And in these years of writing frontend code, I tried many different ways to structure CSS - BEM, atomic, OOCSS, etc. (I have a quick summary of them at the end of this blog). The structure I liked the most is [rscss](https://rscss.io/) (a variation of BEM). And with some modifications, here's how I write CSS nowadays:
 
-### Overall structure
+## Overall structure
 
 ```
 - root
@@ -34,7 +33,9 @@ And in these years of writing frontend code, I tried many different ways to stru
     - ComponentBar (with its CSS)
 ```
 
-### Global CSS file - Resets
+## Global CSS file
+
+### Resets
 
 ```css
 /* Global resets are very very basic. I just want a baseline. */
@@ -64,7 +65,7 @@ img {
 }
 ```
 
-### Global CSS file - CSS variables
+### CSS variables
 
 I really like CSS variables (Check out my blog on [CSS variables](../css-variable)). So I always use it for global themes. Some common variables I have:
 
@@ -92,7 +93,7 @@ I really like CSS variables (Check out my blog on [CSS variables](../css-variabl
 }
 ```
 
-### Global CSS file - Utilities
+### Utilities
 
 Depending on the design language of the site, and how the components are structure, I usually have some global utility classes. These are shared styles used in many places. Some examples:
 
@@ -119,7 +120,9 @@ Some of them can be wrapped as a component (like `._card`), but sometimes it's m
 
 I always start utility classes with `_` (learned from [rscss](https://rscss.io/helpers.html)), so it's always easy to identify - when looking at a piece of HTML `<div class="_card notification"></div>`, I can instantly know this class is in the global css, not component's CSS.
 
-### Component CSS - tags are okay
+## Component CSS
+
+### tags are okay
 
 All the above sections are in the site root level. One CSS file directly added to the HTML. And within each component, are the styles for that component.
 
@@ -140,7 +143,7 @@ It's commonly know as a best practice to not use tags or ids as CSS selectors. B
 
 If this is the whole component, there's no need to give class names like `.toggle-button`, `.list`, `.item`. It's much easier to just use `button, ul, li` as the CSS selectors.
 
-### Component CSS - nesting
+### nesting
 
 I use CSS nesting. It's a little dangerous - in a complex page, deeply nested CSS selectors can hurt performance. But in most cases, I won't nest more than 2 levels, and the performance loss is negligible. And with CSS nesting, I gain a the code readability, and avoid css leaking within the component.
 
@@ -158,7 +161,7 @@ I use CSS nesting. It's a little dangerous - in a complex page, deeply nested CS
 .title {}
 ```
 
-### Component CSS - modifiers
+### modifiers
 
 This is the same as RSCSS - if an element has different states, use a modifier class. And I always has start them with `-`:
 
@@ -174,6 +177,6 @@ This is the same as RSCSS - if an element has different states, use a modifier c
 
 HTML looks like (use vue as an example): `<div class="panel" :class="{'-expanded': isPanelExpanded}"></div>`, so in DOM, it would be renders as `<div class="panel"></div>` or `<div class="panel -expanded"></div>`
 
-### Component CSS - No block-element
+### No block-element
 
 Both BEM and RSCSS has the concept of **block & element**, and are fairly strict on the relationship. But I don't find it very useful for me. Mostly because I exclusively build frontend using component-capable libraries (react, vue, angular, etc.). So in most cases, the component is the "block", and everything I write is "element".

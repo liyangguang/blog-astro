@@ -1,20 +1,36 @@
 ---
-// import HeaderLink from '@components/HeaderLink.astro';
+import HeaderLink from '@components/HeaderLink.astro';
 ---
 
-<header>
-	<a href="/">yangguang.li</a>
-</header>
 <style>
+	header, div {
+		display: flex;
+		justify-content: space-between;
+		gap: 1em;
+	}
+
 	a, a:visited {
 		text-decoration: none;
 		font-weight: bold;
-		font-size: 1.5em;
 		color: var(--text);
 		transition: color var(--transition);
+	}
+
+	header > a {
+		text-decoration: none !important;
+		font-size: 1.4em;
 	}
 
 	a:hover {
 		color: var(--accent);
 	}
 </style>
+
+<header>
+	<HeaderLink href="/">yangguang.li</HeaderLink>
+	<div>
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/blog">Blog</HeaderLink>
+		<HeaderLink href="/about">About</HeaderLink>
+	</div>
+</header>

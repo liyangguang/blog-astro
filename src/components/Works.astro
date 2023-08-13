@@ -1,0 +1,125 @@
+---
+// TODO: add content
+const WORKS = [
+  {
+    title: 'AskLukeW',
+    time: 'Feb 2023 - May 2023',
+    link: 'https://ask.lukew.com',
+    shortDescription: `"Chat with any website" experiment built at Sutter Hill Ventures.`,
+    longDescription: `I built the pipeline to ingest webpages + audios + videos + PDFs (with many embedding techniques we discovered), and prompting, citation on LLM, as well as all the UI.`,
+    image: '',
+  },
+  {
+    title: 'YDays',
+    time: '',
+    link: 'https://ydays.com',
+    shortDescription: `Creative drawing challenge app. A side project / startup attempt with designer friends.`,
+    longDescription: ``,
+    image: '',
+  },
+  {
+    title: 'AI functions',
+    time: '',
+    link: '',
+    shortDescription: ``,
+    longDescription: ``,
+    image: '',
+  },
+  {
+    title: 'ChatGPT Code Previewer',
+    time: '',
+    link: '',
+    shortDescription: ``,
+    longDescription: ``,
+    image: '',
+  },
+  {
+    title: 'Figma TOC+ plugin',
+    time: '',
+    link: '',
+    shortDescription: ``,
+    longDescription: ``,
+    image: '',
+  },
+  {
+    title: 'Chrome status',
+    time: '',
+    link: '',
+    shortDescription: ``,
+    longDescription: ``,
+    image: '',
+  },
+]
+---
+<ul>
+  {
+    WORKS.map((work) => (
+      <li>
+        <a href={work.link} target="_blank" rel="noreferrer noopener">
+          <div>
+            <p class="title">{work.title}</p>
+            <p class="time">{work.time}</p>
+            <p>{work.shortDescription}</p>
+          </div>
+          <div class="detail-layer">
+            <p>{work.longDescription}</p>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1em;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: contents;
+  }
+
+  li a {
+    border: 1px solid var(--border);
+    display: grid;
+    text-decoration: none;
+    color: inherit !important;
+    font-weight: normal;
+  }
+  
+  li a > div {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 1em;
+  }
+
+  p {
+    margin: .5em 0;
+  }
+
+  .title {
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .detail-layer {
+    background: #0009;
+    opacity: 0;
+    transition: opacity var(--transition);
+    color: white;
+    z-index: 1;
+  }
+
+  li:hover .detail-layer {
+    opacity: 1;
+  }
+
+  .time {
+    font-size: .8em;
+    opacity: .8;
+  }
+</style>

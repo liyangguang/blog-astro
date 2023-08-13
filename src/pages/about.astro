@@ -1,0 +1,173 @@
+---
+import BaseLayout from '@src/BaseLayout.astro';
+
+const CONTACT = [
+	{label: 'https://yangguang.li', url: 'https://yangguang.li'},
+	{label: 'liyangguangcn@gmail.com', url: 'mailto:liyangguangcn@gmail.com'},
+	{label: '812-360-1622', url: 'tel:+18123601622'},
+];
+
+// TODO: refind content
+const EXPERIENCES = [
+	{
+		company: 'Sutter Hill Ventures',
+		position: 'Engineer',
+		time: 'Feb 2023 - Present',
+		location: 'Palo Alto, CA',
+		content: [
+			`Incubating AI focused startups. LLM powered enterprise private knowledge assistant. Demo: AskLukeW (https://ask.lukew.com)
+	⚬ Ingest and embed private enterprise knowledge, including text, audio, video and more.
+	⚬ Embedding vector retrieval and prompt engineering to return answer based on private knowledge and context citation.
+	⚬ UX patterns to interact with resources, and continuous exploration.`
+		],
+	},
+	{
+		company: 'Google',
+		position: 'Senior UX Engineer',
+		time: 'June 2016 - Jan 2023',
+		location: 'Mountain View, CA',
+		content: [
+			`Managed a UXE team.
+	 ⚬ Manager for 3 years, 4 reports in total.`,
+	 `Tech lead on multiple internal sites/tools/apps.
+	 ⚬ (continued) Internal roadmap tool
+	 ⚬ (continued) Educational web game series
+	 ⚬ (continued) Company level OKR metric platform`,
+	 `Prototyped and designed products from 0 to 1.
+	 ⚬ COVID impact for Google apps, and mobile market across the world dashboard.
+	 ⚬ Google sustainability efforts and projects dashboard.
+	 ⚬ (continued) Data story telling / interactive visualization series.`,
+		],
+	},
+	{
+		company: 'LexusNexus',
+		position: 'Interaction design & develop intern',
+		time: 'Summer 2015',
+		location: 'Dayton, OH',
+		content: [
+			``,
+		],
+	},
+];
+
+const EDUCATION = [
+	{
+		university: 'Indiana University',
+		program: 'M.S. in Human-Computer Interaction Design',
+		time: 'Aug 2014 - May 2016',
+	},
+	{
+		university: 'Beijing University of Posts and Telecommunications',
+		program: 'B.E. in Industrial Design (Interaction design track)',
+		time: 'Aug 2010 - Jun 2014',
+	},
+];
+---
+
+<BaseLayout>
+	<style slot="style">
+		main {
+			display: grid;
+			grid-template-columns: 200px 1fr;
+			gap: 3em;
+			align-items: start;
+			max-width: 80ch;
+			margin: 0 auto;
+		}
+
+		.section-title,
+		.position,
+		.subtitle {
+			margin: 0.3em 0;
+		}
+
+		.section-title {
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+
+		.position {
+			font-weight: bold;
+		}
+
+		.subtitle {
+			opacity: 0.7;
+			font-size: .9em;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		p {
+			margin: .3em 0;
+		}
+
+		.first-name {
+			font-weight: bold;
+		}
+
+		.first-name,
+		.last-name {
+			font-size: 2em;
+			line-height: 1;
+		}
+
+		.contacts li {
+			margin: .5em 0;
+		}
+		.contacts li a {
+			color: inherit;
+			text-decoration: none;
+			font-weight: normal;
+			transition: color var(--transition);
+		}
+
+		.contacts li a:hover {
+			color: var(--accent);
+		}
+
+		.text-content li {
+			margin-bottom: 1.4em;
+		}
+
+		@media print {
+			:global(header, footer) {
+				display: none !important;
+			}
+		}
+	</style>
+
+	<main>
+		<p>
+			<span class="first-name">Yangguang</span>
+			<br>
+			<span class="last-name">Li</span>
+		</p>
+		<ul class="contacts">
+			{CONTACT.map((item) => <li><a href={item.url} target="_blank" rel="noreferrer noopener">{item.label}</a></li>)}
+		</ul>
+		{EXPERIENCES.map((item) => 
+			<div>
+				<p class="section-title">{item.company}</p>
+				<p class="position">{item.position}</p>
+				<p class="subtitle">{item.time}</p>
+				<p class="subtitle">{item.location}</p>
+			</div>
+			<ul class="text-content">
+				{item.content.map((item) => <li>{item}</li>)}
+			</ul>
+		)}
+		<span class="section-title">education</span>
+		<ul class="text-content">
+			{EDUCATION.map((item) => 
+				<li>
+					<p>{item.program} | {item.university}</p>
+					<p class="subtitle">{item.time}</p>
+				</li>
+			)}
+		</ul>
+	</main>
+</BaseLayout>

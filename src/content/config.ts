@@ -17,6 +17,7 @@ const blog = defineCollection({
 		heroImage: z
 			.string()
 			.optional(),
+		isFeatured: z.boolean().optional(),
 	}),
 });
 
