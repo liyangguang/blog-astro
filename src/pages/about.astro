@@ -16,20 +16,19 @@ const EXPERIENCES = [
 		location: 'Palo Alto, CA',
 		content: [
 			{
-				item: `Lead engineer on ask.lukew.com - a private knowledge chat app`,
+				item: `Lead engineer on ask.lukew.com - private knowledge LLM demo`,
 				details: [
-					`Led the end-to-end development, including UI, API, database, and LLM integration.`,
-					`Created an ingestion and embedding pipeline capable of processing webpages, audios, videos, and PDFs.`,
-					`Designed a complex LLM flow that consists of prompting, conversation memory, retrieval & citation, and context-aware suggestions.`,
+					`Led the end-to-end development: UI, API, database, and LLM integration.`,
+					`Created ingestion and embedding pipelines for webpages, audio, videos, and PDFs.`,
+					`Designed an LLM flow with prompting, conversation memory, retrieval & citation, and context-aware suggestions.`,
 				],
 				tech: ['GPT', 'Whisper', 'Vector database', 'SvelteKit'],
 			},
 			{
-				item: `Lead engineer on multiple stealth start-up products`,
+				item: `Lead engineer on stealth start-up products`,
 				details: [
-					`Led development of an AI-powered enterprise data understanding platform. It gained significant traction and adoption by multiple portfolio companies within SHV.`,
-					`Explored strategies for optimizing LLM-generated results. Built an experimentation comparison tool, and retrieval analysis features.`,
-					`Incubating multiple AI-powered start-up concepts. Owned engineering of initial products.`,
+					`Led the development of multiple AI-powered products. Some were adopted by multiple SHV portfolio companies.`,
+					`Explored optimization of LLM results. Built experimentation and analysis tools.`,
 				],
 				tech: ['GPT', 'Llama', 'Supabase', 'SvelteKit'],
 			},
@@ -44,8 +43,7 @@ const EXPERIENCES = [
 			{
 				item: `Frontend and prototyping lead on the Google Data Warehouse team`,
 				details: [
-					`Co-designed, and prototyped the product direction and UX design, steering it from inception to a successful launch.`,
-					`Owned the engineering of the initial version of the platform. And led the migration to Angular.`,
+					`Co-designed, and prototyped the product, steering it from inception to a successful launch.`,
 					`Led engineering on multiple related products - mobile apps insights dashboard, COVID impact on Google apps dashboard, interactive visualization educational series.`,
 				],
 				tech: ['Vue', 'Angular', 'SQL', 'Firebase'],
@@ -53,9 +51,9 @@ const EXPERIENCES = [
 			{
 				item: `Tech lead on multiple cross-company projects`,
 				details: [
-					`Led engineering on Google's business metrics platform. A pivotal tool for tracking, and measuring all company-level OKRs. Used directly by the Office of the CEO and all SVP Chiefs of Staff.`,
-					`Led frontend of the internal tech stack catalog platform. Built two major versions - v1: static generated, and v2: client-side rendering.`,
+					`Led engineering on Google's business metrics platform. A vital tool for the Office of CEO and all SVPs to track and measure company-level OKRs.`,
 					`Owned the internal roadmap creation and sharing tool. Led both engineering and product design.`,
+					`Led frontend of the internal tech stack catalog platform, iOS@Google program, educational games, and more.`,
 				],
 				tech: ['React', 'Angular', 'Firebase', 'IssueTracker'],
 			},
@@ -78,10 +76,8 @@ const EXPERIENCES = [
 			{
 				item: `Founding member and engineering lead of YDays.com - a creative drawing platform`,
 				details: [
-					`Architected the overall system of the YDays app. Core contributor to the codebase.`,
-					`Built an admin dashboard for usage tracking, quest creation, and management.`,
+					`Architected the overall system of the YDays UI and admin dashboard.`,
 					`Implemented a P5-to-GIF conversion process on cloud functions, using a headless browser and web workers.`,
-					`Established coding practice, a CI/CD flow, and error reporting system.`,
 				],
 				tech: ['React', 'Firebase', 'GitLab CI/CD', 'Cloud functions', 'Puppeteer'],
 			}
@@ -110,7 +106,7 @@ const EDUCATION = [
 		main {
 			display: grid;
 			grid-template-columns: 200px 1fr;
-			gap: 3em;
+			gap: 2em;
 			align-items: start;
 			max-width: 80ch;
 			margin: 0 auto;
@@ -153,6 +149,7 @@ const EDUCATION = [
 
 		.first-name {
 			font-weight: bold;
+			margin-bottom: .8em;
 		}
 
 		.first-name,
@@ -160,7 +157,6 @@ const EDUCATION = [
 			display: block;
 			font-size: 2em;
 			line-height: 1;
-			margin-bottom: .1em;
 		}
 
 		.contacts li {
@@ -185,13 +181,28 @@ const EDUCATION = [
 			:global(header, footer) {
 				display: none !important;
 			}
+
+			main {
+				font-size: .8em;
+				max-width: 100ch;
+				gap: 1em;
+				line-height: 1.4;
+			}
+	
+			.contacts li {
+				margin: 0;
+			}
+			.first-name,
+			.last-name {
+				font-size: 1.6em;
+				line-height: .8;
+			}
 		}
 	</style>
 
 	<main>
 		<p>
 			<span class="first-name">Yangguang</span>
-			<br>
 			<span class="last-name">Li</span>
 		</p>
 		<ul class="contacts">
@@ -209,7 +220,7 @@ const EDUCATION = [
 					<span>{exp.item}</span>
 					<ul class="exp-details">
 						{exp.details.map((detail) => <li>{detail}</li>)}
-						{exp.tech ? <li><b>Tech</b>: {exp.tech.join(', ')}.</li> : ''}
+						{exp.tech ? <li><b>{exp.tech.join(', ')}</b></li> : ''}
 					</ul>
 				</li>)}
 			</ul>
