@@ -5,21 +5,34 @@ const CONTACT = [
 	{label: '812-360-1622', url: 'tel:+18123601622'},
 	{label: 'https://yangguang.li', url: 'https://yangguang.li'},
 	{label: 'liyangguangcn@gmail.com', url: 'mailto:liyangguangcn@gmail.com'},
-	{label: 'https://linkedin.com/in/yangguangli/', url: 'https://linkedin.com/in/yangguangli/'},
+	// {label: 'https://linkedin.com/in/yangguangli/', url: 'https://linkedin.com/in/yangguangli/'},
 ];
 
-// TODO: refind content
 const EXPERIENCES = [
 	{
 		company: 'Sutter Hill Ventures',
-		position: 'Engineer',
+		position: 'Engineer on AI projects',
 		time: 'Feb 2023 - Present',
 		location: 'Palo Alto, CA',
 		content: [
-			`Incubating AI focused startups. LLM powered enterprise private knowledge assistant. Demo: AskLukeW (https://ask.lukew.com)
-	⚬ Ingest and embed private enterprise knowledge, including text, audio, video and more.
-	⚬ Embedding vector retrieval and prompt engineering to return answer based on private knowledge and context citation.
-	⚬ UX patterns to interact with resources, and continuous exploration.`
+			{
+				item: `Lead engineer on ask.lukew.com - a private knowledge chat app`,
+				details: [
+					`Led the end-to-end development, including UI, API, database, and LLM integration.`,
+					`Created an ingestion and embedding pipeline capable of processing webpages, audios, videos, and PDFs.`,
+					`Designed a complex LLM flow that consists of prompting, conversation memory, retrieval & citation, and context-aware suggestions.`,
+				],
+				tech: ['GPT', 'Whisper', 'Vector database', 'SvelteKit'],
+			},
+			{
+				item: `Lead engineer on multiple stealth start-up products`,
+				details: [
+					`Led development of an AI-powered enterprise data understanding platform. It gained significant traction and adoption by multiple portfolio companies within SHV.`,
+					`Explored strategies for optimizing LLM-generated results. Built an experimentation comparison tool, and retrieval analysis features.`,
+					`Incubating multiple AI-powered start-up concepts. Owned engineering of initial products.`,
+				],
+				tech: ['GPT', 'Llama', 'Supabase', 'SvelteKit'],
+			},
 		],
 	},
 	{
@@ -28,16 +41,50 @@ const EXPERIENCES = [
 		time: 'June 2016 - Jan 2023',
 		location: 'Mountain View, CA',
 		content: [
-			`Managed a UXE team.
-	 ⚬ Manager for 3 years, 4 reports in total.`,
-	 `Tech lead on multiple internal sites/tools/apps.
-	 ⚬ (continued) Internal roadmap tool
-	 ⚬ (continued) Educational web game series
-	 ⚬ (continued) Company level OKR metric platform`,
-	 `Prototyped and designed products from 0 to 1.
-	 ⚬ COVID impact for Google apps, and mobile market across the world dashboard.
-	 ⚬ Google sustainability efforts and projects dashboard.
-	 ⚬ (continued) Data story telling / interactive visualization series.`,
+			{
+				item: `Frontend and prototyping lead on the Google Data Warehouse team`,
+				details: [
+					`Co-designed, and prototyped the product direction and UX design, steering it from inception to a successful launch.`,
+					`Owned the engineering of the initial version of the platform. And led the migration to Angular.`,
+					`Led engineering on multiple related products - mobile apps insights dashboard, COVID impact on Google apps dashboard, interactive visualization educational series.`,
+				],
+				tech: ['Vue', 'Angular', 'SQL', 'Firebase'],
+			},
+			{
+				item: `Tech lead on multiple cross-company projects`,
+				details: [
+					`Led engineering on Google's business metrics platform. A pivotal tool for tracking, and measuring all company-level OKRs. Used directly by the Office of the CEO and all SVP Chiefs of Staff.`,
+					`Led frontend of the internal tech stack catalog platform. Built two major versions - v1: static generated, and v2: client-side rendering.`,
+					`Owned the internal roadmap creation and sharing tool. Led both engineering and product design.`,
+				],
+				tech: ['React', 'Angular', 'Firebase', 'IssueTracker'],
+			},
+			{
+				item: `UXE Manager`,
+				details: [
+					`Manager for 2.5 years, 4 reports in total.`,
+					`Recruited and onboarded my reports, and mentored them.`,
+					`Continued doing IC work as a tech lead.`,
+				],
+			},
+		],
+	},
+	{
+		company: 'YDays',
+		position: 'Founding engineer',
+		time: 'Aug 2020 - Jan 2022',
+		location: 'Mountain View, CA',
+		content: [
+			{
+				item: `Founding member and engineering lead of YDays.com - a creative drawing platform`,
+				details: [
+					`Architected the overall system of the YDays app. Core contributor to the codebase.`,
+					`Built an admin dashboard for usage tracking, quest creation, and management.`,
+					`Implemented a P5-to-GIF conversion process on cloud functions, using a headless browser and web workers.`,
+					`Established coding practice, a CI/CD flow, and error reporting system.`,
+				],
+				tech: ['React', 'Firebase', 'GitLab CI/CD', 'Cloud functions', 'Puppeteer'],
+			}
 		],
 	},
 ];
@@ -95,6 +142,11 @@ const EDUCATION = [
 			margin: 0;
 		}
 
+		.exp-details {
+			list-style: disc;
+			padding-left: 1em;
+		}
+
 		p {
 			margin: .3em 0;
 		}
@@ -125,7 +177,7 @@ const EDUCATION = [
 			color: var(--accent);
 		}
 
-		.text-content li {
+		.text-content > li {
 			margin-bottom: 1.4em;
 		}
 
@@ -145,15 +197,21 @@ const EDUCATION = [
 		<ul class="contacts">
 			{CONTACT.map((item) => <li><a href={item.url} target="_blank" rel="noreferrer noopener">{item.label}</a></li>)}
 		</ul>
-		{EXPERIENCES.map((item) => 
+		{EXPERIENCES.map((exp) => 
 			<div>
-				<p class="section-title">{item.company}</p>
-				<p class="position">{item.position}</p>
-				<p class="metadata">{item.time}</p>
-				<p class="metadata">{item.location}</p>
+				<p class="section-title">{exp.company}</p>
+				<p class="position">{exp.position}</p>
+				<p class="metadata">{exp.time}</p>
+				<p class="metadata">{exp.location}</p>
 			</div>
 			<ul class="text-content">
-				{item.content.map((item) => <li>{item}</li>)}
+				{exp.content.map((exp) => <li>
+					<span>{exp.item}</span>
+					<ul class="exp-details">
+						{exp.details.map((detail) => <li>{detail}</li>)}
+						{exp.tech ? <li><b>Tech</b>: {exp.tech.join(', ')}.</li> : ''}
+					</ul>
+				</li>)}
 			</ul>
 		)}
 		<span class="section-title">education</span>
