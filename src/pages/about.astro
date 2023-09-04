@@ -187,6 +187,8 @@ const EDUCATION = [
 				max-width: 100ch;
 				gap: 1em;
 				line-height: 1.4;
+				/* When printing, custom fonts can cause the text in the PDF messed up (backwards, etc.) */
+				font-family: sans-serif;
 			}
 	
 			.contacts li {
