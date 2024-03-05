@@ -7,6 +7,13 @@
 	--sans-font: 'Montserrat', sans-serif;
 }
 
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text: #e2e2e2;
+		--accent: #6fa3f7;
+	}
+}
+
 html {
 	font-size: .8em;
 }
