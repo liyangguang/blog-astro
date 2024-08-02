@@ -1,0 +1,24 @@
+.wrapper {
+  
+}
+
+.editor {
+  background: #333;
+}
+
+.scrollable {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.handle.forVertical {
+  height: 2px;
+}
+
+.handle.forHorizontal {
+  width: 2px;
+}
+
+.handle:hover {
+  background: lightblue;
+}

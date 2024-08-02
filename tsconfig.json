@@ -4,9 +4,17 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/content/assets/*"]
-    }
+      "@src/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@assets/*": [
+        "src/content/assets/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

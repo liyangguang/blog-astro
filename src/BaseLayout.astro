@@ -1,36 +1,59 @@
 ---
-import BaseHead from '@components/BaseHead.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '@src/shared';
-
-type Props = {hideHeader?: boolean};
-const { hideHeader } = Astro.props;
+import Html from './Html.astro';
+import { VsCodePanels } from '@components/VsCodePanels';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <slot name="style"/>
-	</head>
+<Html>
+	<style>
+		.page {
+			height: 100dvh;
+			display: grid;
+			align-items: center;
+			justify-items: center;
+		}
+			
+		.window {
+			display: grid;
+			grid-template-rows: auto 1fr auto;
+			height: calc(100dvh - 6em);
+			width: calc(100dvw - 6em);
+  		background: #111;
+  		color: #ddd;
+		}
 
-	<body>
-		{/* The empty div is kept as a grid row holder. */}
-		{hideHeader ? <div></div> : <Header />}
-		{/* This extra div is grid row holder. */}
-		<div class="content">
-      <slot />
+		.window-header {
+			display: flex;
+		}
+
+		.status-bar {
+			display: flex;
+		}
+	</style>
+
+	<div class="page">
+		<div class="window">
+			<div class="window-header">
+				<div class="window-controls">
+					<div class="dot -red"></div>
+					<div class="dot -yellow"></div>
+					<div class="dot -green"></div>
+				</div>
+				<div class="title">Yangguang Li</div>
+				<div></div>
+			</div>
+			<VsCodePanels client:load>
+				<slot slot="mainContent" />
+			</VsCodePanels>
+			<div class="status-bar">
+				<div>
+					<p>git: main</p>
+					<p>Last updated: 2024</p>
+				</div>
+				<div>
+					<p>UTF-8</p>
+					<p>20 lines, 3000 chars</p>
+				</div>
+			</div>
 		</div>
-		<Footer />
-		{/* Google tag (gtag.js) https://analytics.google.com/analytics/web/#/p395677361/reports/intelligenthome */}
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FB9DL0DKLS"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-FB9DL0DKLS');
-		</script>
-	</body>
-</html>
+	</div>
+</Html>

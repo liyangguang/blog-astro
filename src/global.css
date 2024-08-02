@@ -1,5 +1,3 @@
-/* `simplecss` is added in @components/BaseHead.astro */
-
 :root {
 	--transition: .3s ease;
 	--text: #474e64;
@@ -14,25 +12,17 @@
 	}
 }
 
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+}
+
 html {
 	font-size: .8em;
 }
 
 a {
 	font-weight: bold;
-}
-
-body {
-	grid-template-columns: 1fr min(110ch, 90%) 1fr;
-	grid-template-rows: auto 1fr auto;
-	min-height: 100dvh;
-	align-items: start;
-}
-
-body > header {
-  background-color: transparent;
-	border-bottom: 0;
-	padding: 2em;
 }
 
 h1,

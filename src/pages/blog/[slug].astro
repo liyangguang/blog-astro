@@ -22,7 +22,7 @@ const { Content, headings } = await post.render();
 ---
 
 <BaseLayout>
-	<style slot="style">
+	<style>
 		:root {
 			--blog-max-width: 70ch;
 		}
@@ -48,11 +48,6 @@ const { Content, headings } = await post.render();
 			padding-top: 1em;
 		}
 
-		.content {
-			width: 100%;
-			max-width: var(--blog-max-width);
-		}
-
 		nav {
 			position: sticky;
 			top: 0;
@@ -61,23 +56,6 @@ const { Content, headings } = await post.render();
 			width: 100%;
 			margin: 0 auto;
 			height: fit-content;
-		}
-
-		@media screen and (max-width: 1000px) {
-			.wrapper {
-				grid-template-columns: minmax(0, 1fr);
-			}
-
-			.content {
-				grid-row: 2;
-				margin: 0 auto;
-			}
-
-			nav {
-				position: static;
-				padding-bottom: 1em;
-				border-bottom: 1px solid var(--border);
-			}
 		}
 	</style>
 
