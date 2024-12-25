@@ -3,85 +3,70 @@ import BaseLayout from '@src/BaseLayout.astro';
 
 const CONTACT = [
 	{label: '812-360-1622', url: 'tel:+18123601622'},
-	{label: 'https://yangguang.li', url: 'https://yangguang.li'},
 	{label: 'liyangguangcn@gmail.com', url: 'mailto:liyangguangcn@gmail.com'},
-	{label: 'https://linkedin.com/in/yangguangli/', url: 'https://linkedin.com/in/yangguangli/'},
+	{label: 'yangguang.li', url: 'https://yangguang.li'},
+	{label: 'linkedin.com/in/yangguangli/', url: 'https://linkedin.com/in/yangguangli/'},
 ];
 
 const EXPERIENCES = [
 	{
-		company: 'Sutter Hill Ventures',
-		position: 'Engineer in Residence',
-		time: 'Jan 2023 - Present',
-		location: 'Palo Alto, CA',
-		content: [
-			{
-				item: `Lead engineer on ask.lukew.com - private knowledge LLM demo`,
-				details: [
-					`Prototyped and developed the end-to-end experience: UI, API, database, and LLM integration.`,
-					`Designed an LLM ingestion and retrievel flow with prompting, conversation memory, retrieval & citation, and context-aware suggestions - that supports webpages, audio, videos, and PDFs.`,
-				],
-				tech: ['SvelteKit', 'OpenAI APIs', 'Vector database'],
-			},
-			{
-				item: `Lead engineer on stealth start-up products`,
-				details: [
-					`Prototyped & developed multiple AI-powered products. Some were adopted by multiple SHV portfolio companies.`,
-					`Explored optimization of LLM results. Built experimentation and analysis tools.`,
-				],
-				tech: ['SvelteKit', 'Vue', 'Supabase', 'OpenAI', 'VS code extension', 'LangChain'],
-			},
+		company: 'Google',
+		position: 'Staff Software Engineer',
+		time: 'Dec 2024 - Present',
+		location: 'Sunnyvale, CA',
+		details: [
+			`Frontend Tech Lead for Gemini playground - Google AI Studio (https://ai.google.dev/aistudio)`
 		],
+		tech: ['Angular', 'Gemini API'],
+	},
+	{
+		company: 'Airbnb',
+		position: 'Senior Frontend Engineer',
+		time: 'June 2024 - Dec 2024',
+		location: 'Remote',
+		details: [
+			`Key contributor to the new payment platform design launched in Nov 2024.`,
+			`Spearheaded a frontend architecture overhaul, utilizing variation patterns to enhance scalability and reduce tech debt.`,
+		],
+		tech: ['React', 'GraphQL', 'Happo'],
+	},
+	{
+		company: 'Sutter Hill Ventures',
+		position: 'Lead Engineer',
+		time: 'Jan 2023 - June 2024',
+		location: 'Palo Alto, CA',
+		details: [
+			`Solo engineer at the LLM startup incubator, built multiple products from 0 to 1.`,
+			`Built a full RAG-LLM application <a href="https://ask.lukew.com" target="_blank" rel="noopener noreferrer">Ask LukeW</a> - the full stack web app, content ingestion pipeline for the text/audio/videos/web/emails/PDFs, and the RAG flow with conversation memory/citation/context-aware suggestions.`,
+			`Led engineering for a stealth enterprise AI product capable of processing large volumes of multimedia content into structured data using an LLM pipeline, enabling complex content querying.`,
+			`Developed the initial VSCode extension for AI coding assistant - <a href="https://augmentcode.com" target="_blank" rel="noopener noreferrer">AugmentCode</a>.`,
+		],
+		tech: ['RAG LLM (OpenAI, Claude, Gemini, Llama)', 'Vector embeddings', 'SvelteKit', 'Supabase', 'VS code extension', 'LangChain'],
 	},
 	{
 		company: 'Google',
-		position: 'Senior UX Engineer',
+		position: 'UXE Tech Lead Manager',
 		time: 'June 2016 - Jan 2023',
 		location: 'Mountain View, CA',
-		content: [
-			{
-				item: `Frontend and prototyping lead on the Google Data Warehouse team`,
-				details: [
-					`Co-designed, and prototyped the product, steering it from inception to a successful launch.`,
-					`Led engineering on multiple data insights products - mobile apps insights dashboard, COVID impact on Google apps dashboard, interactive visualization educational series.`,
-				],
-				tech: ['Vue', 'Angular', 'Firebase', 'd3.js'],
-			},
-			{
-				item: `Tech lead on multiple cross-company projects`,
-				details: [
-					`Led engineering on Google's business metrics platform. A vital tool for the Office of CEO and all SVPs to track and measure company-level OKRs.`,
-					`Owned the internal roadmap creation and sharing tool. Led both engineering and product design.`,
-					`Led frontend of the internal tech stack catalog platform, iOS@Google program, educational games, and more.`,
-				],
-				tech: ['React', 'Vue', 'Angular', 'Firebase', 'GCP'],
-			},
-			{
-				item: `UXE Manager`,
-				details: [
-					`Manager for 2.5 years, 4 reports in total.`,
-					`Recruited and onboarded my reports, and mentored them.`,
-					`Continued doing IC work as a tech lead.`,
-				],
-			},
+		details: [
+			`Co-designed, prototyped, and deployed multiple data insight tools used across Google, including by the Office of the CEO.`,
+			`Tech lead for multiple cross-company products, including a company OKR tracker, roadmap planning tool, and tech stack platform.`,
+			`Built and managed a team of 4 UXEs (2020 - 2023)`,
 		],
+		tech: ['Vue', 'Angular', 'Firebase', 'GCP', 'd3.js'],
 	},
-	{
-		company: 'YDays (Side project)',
-		position: 'Founding Engineer',
-		time: 'Aug 2020 - Jan 2022',
-		location: 'Mountain View, CA',
-		content: [
-			{
-				item: `Founding member and engineering lead of YDays.com - a creative drawing platform`,
-				details: [
-					`Architected the overall system of the YDays UI and admin dashboard.`,
-					`Implemented a P5-to-GIF conversion process on cloud functions, using a headless browser and web workers.`,
-				],
-				tech: ['React', 'Firebase', 'GitLab CI/CD', 'Cloud functions', 'Puppeteer'],
-			}
-		],
-	},
+	// {
+	// 	company: 'YDays',
+	// 	position: 'Founding Engineer',
+	// 	time: 'Aug 2020 - Jan 2022',
+	// 	location: 'Side project',
+	// 	details: [
+	// 		`Founding member and engineering lead of YDays.com - a creative drawing platform`,
+	// 		`Architected the overall system of the YDays UI and admin dashboard.`,
+	// 		`Implemented a P5-to-GIF conversion process on cloud functions, using a headless browser and web workers.`,
+	// 	],
+	// 	tech: ['React', 'Firebase', 'GitLab CI/CD', 'Cloud functions', 'Puppeteer'],
+	// },
 ];
 
 const EDUCATION = [
@@ -101,11 +86,11 @@ const EDUCATION = [
 ---
 
 <BaseLayout>
-	<style slot="style">
+	<style>
 		main {
 			display: grid;
 			grid-template-columns: 200px 1fr;
-			gap: 2em;
+			gap: 1em 2em;
 			align-items: start;
 			max-width: 80ch;
 			margin: 0 auto;
@@ -118,7 +103,6 @@ const EDUCATION = [
 		}
 
 		.section-title {
-			text-transform: uppercase;
 			font-weight: bold;
 		}
 
@@ -142,24 +126,41 @@ const EDUCATION = [
 			padding-left: 1em;
 		}
 
+		:global(.exp-details a) {
+			color: inherit;
+			font-weight: inherit;
+		}
+
+		.exp-tech {
+			padding-left: 1em;
+		}
+
 		p {
 			margin: .3em 0;
 		}
 
+		.header {
+			grid-column: 1/-1;
+			margin-bottom: 1em;
+		}
+
 		.first-name {
 			font-weight: bold;
-			margin-bottom: .8em;
+			margin-right: .2em;
 		}
 
 		.first-name,
 		.last-name {
-			display: block;
-			font-size: 2em;
-			line-height: 1;
+			font-size: 2.5em;
+		}
+
+		.contacts {
+			display: flex;
+			gap: 1em;
 		}
 
 		.contacts li {
-			margin: .5em 0;
+			margin: .3em 0;
 		}
 		.contacts li a {
 			color: inherit;
@@ -173,7 +174,7 @@ const EDUCATION = [
 		}
 
 		.text-content > li {
-			margin-bottom: 1.4em;
+			margin-bottom: 1em;
 		}
 
 		@media print {
@@ -182,51 +183,46 @@ const EDUCATION = [
 			}
 
 			main {
-				font-size: .8em;
-				max-width: 100ch;
-				gap: 1em;
 				line-height: 1.4;
+				font-size: .9em;
+				gap: .6em;
 				/* When printing, custom fonts can cause the text in the PDF messed up (backwards, etc.) */
 				font-family: sans-serif;
 			}
-	
-			.contacts li {
-				margin: 0;
-			}
-			.first-name,
-			.last-name {
-				font-size: 1.6em;
-				line-height: .8;
+
+			/* Remove the URL rendering */
+			.contacts a::after {
+				content: none !important;
 			}
 		}
 	</style>
 
 	<main>
-		<p>
-			<span class="first-name">Yangguang</span>
-			<span class="last-name">Li</span>
-		</p>
-		<ul class="contacts">
-			{CONTACT.map((item) => <li><a href={item.url} target="_blank" rel="noreferrer noopener">{item.label}</a></li>)}
-		</ul>
+		<div class="header">
+			<p>
+				<span class="first-name">Yangguang</span>
+				<span class="last-name">Li</span>
+			</p>
+			<ul class="contacts">
+				{CONTACT.map((item) => <li><a href={item.url} target="_blank" rel="noreferrer noopener">{item.label}</a></li>)}
+			</ul>
+		</div>
 		{EXPERIENCES.map((exp) => 
 			<div>
-				<p class="section-title">{exp.company}</p>
 				<p class="position">{exp.position}</p>
+				<p class="section-title">{exp.company}</p>
 				<p class="metadata">{exp.time}</p>
 				<p class="metadata">{exp.location}</p>
 			</div>
-			<ul class="text-content">
-				{exp.content.map((exp) => <li>
-					<b>{exp.item}</b>
-					<ul class="exp-details">
-						{exp.details.map((detail) => <li>{detail}</li>)}
-						{exp.tech ? <li><b>Tech: </b>{exp.tech.join(', ')}</li> : ''}
-					</ul>
-				</li>)}
-			</ul>
+			<div>
+				<ul class="exp-details">
+					{exp.details?.map((detail) => <li set:html={detail}></li>)}
+				</ul>
+				<p class="exp-tech">{exp.tech ? <b>Tech: </b><span>{exp.tech.join(', ')}</span> : ''}</p>
+			</div>
 		)}
-		<span class="section-title">education</span>
+
+		<span class="section-title">Education</span>
 		<ul class="text-content">
 			{EDUCATION.map((item) => 
 				<li>
