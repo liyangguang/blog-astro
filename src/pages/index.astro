@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@src/BaseLayout.astro';
 import BlogList from '@components/BlogList.astro';
 import Works from '@components/Works.astro';
-import Background3D from '@components/Background3D.astro';
 
 const posts = (await getCollection('blog', ({data}) => data.isFeatured)).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -36,23 +35,14 @@ const posts = (await getCollection('blog', ({data}) => data.isFeatured)).sort(
 	<main>
 		<div class="intro">
 			<h1>Hey there! I'm Yangguang Li</h1>
-			<p>
-				I'm a frontend engineer and UX designer who successfully taken numerous projects from 0 to 1.
-			</p>
-			<p>
-				Currently Web Eng @ <a href="https://shv.com" target="_blank" rel="noreferrer noopener">Sutter Hill Venture</a>, incubating AI focused startup ideas.
-				<br>
-				Ex - UX Engineer, Tech lead and manager @ <a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Google</a>.
-			</p>
-			<p>I write about tech I learned, most about web development.</p>
-			<p class="note">(I just rebuit this site, and still touching up things 🚧😊)</p>
+			<p>I'm a frontend expert with full-stack and UX skills, passionate about building products from 0 to 1.</p>
+			<p>Currently Staff Software Engineer @ Google, TL of <a href="https://ai.google.dev/aistudio" target="_blank" rel="noreferrer noopener">AI Studio</a>. See my <a href="/about" target="_blank" rel="noreferrer noopener">full resume</a></p>
 		</div>
-		<h2>Selected Works</h2>
-		<Works />
+		<!-- <h2>Selected Works</h2>
+		<Works /> -->
 		<h2>Featured Blogs
 			<a href="/blog">View all</a>
 		</h2>
 		<BlogList posts={posts}></BlogList>
 	</main>
-	<Background3D />
 </BaseLayout>
