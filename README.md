@@ -2,4 +2,5 @@
 
 https://yangguang.li
 
-Built using Astro.
+- Built using Astro
+- Deployed on Vercel - https://vercel.com/liyangguangs-projects/blog-astro
