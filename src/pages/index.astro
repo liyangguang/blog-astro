@@ -12,7 +12,7 @@ const posts = (await getCollection('blog', ({data}) => data.isFeatured)).sort(
 <BaseLayout>
 	<style slot="style">
 		.intro {
-			margin: 5em 0;
+			padding: 8em 0;
 			font-size: 1.1em;
 		}
 		
@@ -27,7 +27,7 @@ const posts = (await getCollection('blog', ({data}) => data.isFeatured)).sort(
 
 		h2 a {
 			font-size: 1.2rem;
-			margin-left: 1em;
+			margin-left: .5em;
 			text-decoration: none;
 		}
 	</style>
@@ -35,7 +35,7 @@ const posts = (await getCollection('blog', ({data}) => data.isFeatured)).sort(
 	<main>
 		<div class="intro">
 			<h1>Hey there! I'm Yangguang Li</h1>
-			<p>A frontend expert with full-stack and UX skills. I'm passionate about building products from 0 to 1.</p>
+			<p>A frontend expert with full-stack and UX experience, passionate about building products from 0 to 1.</p>
 			<p>
 				Currently Staff Software Engineer @ Google, tech lead of <a href="https://ai.google.dev/aistudio" target="_blank" rel="noreferrer noopener">Google AI Studio</a>.
 				See my <a href="/about" target="_blank" rel="noreferrer noopener">full resume</a>.

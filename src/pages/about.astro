@@ -38,10 +38,10 @@ const EXPERIENCES = [
 		details: [
 			`Solo engineer at the LLM startup incubator, built multiple products from 0 to 1.`,
 			`Built a full RAG-LLM application <a href="https://ask.lukew.com" target="_blank" rel="noopener noreferrer">Ask LukeW</a> - the full stack web app, content ingestion pipeline for the text/audio/videos/web/emails/PDFs, and the RAG flow with conversation memory/citation/context-aware suggestions.`,
-			`Led engineering for a stealth enterprise AI product capable of processing large volumes of multimedia content into structured data using an LLM pipeline, enabling complex content querying.`,
+			`Led engineering for a stealth enterprise AI product capable of processing large volumes of multimedia content into structured data using an LLM pipeline, enabling complex content querying, including AI agent implementation.`,
 			`Developed the initial VSCode extension for AI coding assistant - <a href="https://augmentcode.com" target="_blank" rel="noopener noreferrer">AugmentCode</a>.`,
 		],
-		tech: ['RAG LLM (OpenAI, Claude, Gemini, Llama)', 'Vector embeddings', 'SvelteKit', 'Supabase', 'VS code extension', 'LangChain'],
+		tech: ['RAG LLM (OpenAI, Claude, Gemini, Llama)', 'AI agent', 'Vector embeddings', 'SvelteKit', 'Supabase', 'VS code extension', 'LangChain'],
 	},
 	{
 		company: 'Google',
@@ -177,6 +177,29 @@ const EDUCATION = [
 			margin-bottom: 1em;
 		}
 
+		@media screen and (max-width: 750px) {
+			main {
+				grid-template-columns: 1fr;
+			}
+
+			.contacts {
+				display: block;
+			}
+
+			.mobile-line-wrap {
+				display: flex;
+				gap: .3em;
+			}
+
+			.mobile-line-wrap > * {
+				margin: 0;
+			}
+
+			.mobile-line-wrap > *:not(:last-child)::after {
+				content: ',';
+			}
+		}
+
 		@media print {
 			:global(header, footer) {
 				display: none !important;
@@ -209,10 +232,14 @@ const EDUCATION = [
 		</div>
 		{EXPERIENCES.map((exp) => 
 			<div>
-				<p class="position">{exp.position}</p>
-				<p class="section-title">{exp.company}</p>
-				<p class="metadata">{exp.time}</p>
-				<p class="metadata">{exp.location}</p>
+				<div class="mobile-line-wrap">
+					<p class="position">{exp.position}</p>
+					<p class="section-title">{exp.company}</p>
+				</div>
+				<div class="mobile-line-wrap">
+					<p class="metadata">{exp.time}</p>
+					<p class="metadata">{exp.location}</p>
+				</div>
 			</div>
 			<div>
 				<ul class="exp-details">

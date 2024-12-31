@@ -3,9 +3,9 @@ import HeaderLink from '@components/HeaderLink.astro';
 ---
 
 <style>
-	header, div {
+	header {
 		display: flex;
-		justify-content: space-between;
+		align-items: center;
 		gap: 1em;
 	}
 
@@ -16,21 +16,30 @@ import HeaderLink from '@components/HeaderLink.astro';
 		transition: color var(--transition);
 	}
 
-	header > a {
+	.title {
 		text-decoration: none !important;
 		font-size: 1.4em;
+	}
+	
+	.grow {
+		flex-grow: 1;
 	}
 
 	a:hover {
 		color: var(--accent);
 	}
+
+	@media screen and (max-width: 400px) {
+		.home {
+			display: none;
+		}
+	}
 </style>
 
 <header>
-	<HeaderLink href="/">yangguang.li</HeaderLink>
-	<div>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">Resume</HeaderLink>
-	</div>
+	<HeaderLink href="/" class="title">yangguang.li</HeaderLink>
+	<div class="grow"></div>
+	<HeaderLink href="/" class="home">Home</HeaderLink>
+	<HeaderLink href="/blog">Blog</HeaderLink>
+	<HeaderLink href="/about">Resume</HeaderLink>
 </header>
