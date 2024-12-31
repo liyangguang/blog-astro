@@ -1,5 +1,5 @@
 ---
-title: Critical "catch" on try-catch with async function
+title: catch async errors
 pubDate: 2023-05-20
 tags:
   - JavaScript

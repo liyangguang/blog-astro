@@ -9,26 +9,30 @@ type Props = {posts: Post[]};
 const posts = Astro.props.posts;
 
 ---
-<ul>
-  {
-    posts.map((post: Post) => (
-      <li>
-        <div class="left">
-          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-        </div>
-        <div class="right">
-          <div class="metadata-row">
-            <FormattedDate date={post.data.pubDate} />
-            &nbsp;
-            <Tags tags={post.data.tags}></Tags>
-          </div>
-        </div>
-      </li>
-    ))
-  }
-</ul>
+<div class="scroll-container">
+  <ul>
+    {
+      posts.map((post: Post) => (
+        <li>
+          <a href={`/blog/${post.slug}/`}>
+            <span class="title">{post.data.title}</span>
+            <span class="metadata-row">
+              <FormattedDate date={post.data.pubDate} />
+              &nbsp;|&nbsp;
+              {post.data.tags}
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
 
 <style>
+  .scroll-container {
+    overflow-x: auto;
+  }
+
   ul {
     list-style-type: none;
     padding: unset;
@@ -37,37 +41,36 @@ const posts = Astro.props.posts;
   }
 
   li {
-    padding: 1em;
-    width: 20em;
-    aspect-ratio: 16/9;
-    border: 1px solid;
+    --width: 14em;
+    flex: 0 0 var(--width);
+    width: var(--width);
+    aspect-ratio: 2/1;
+    border: 1px solid currentColor;
   }
 
   
 	a, a:visited {
+    padding: 1em;
 		text-decoration: none;
-		font-weight: bold;
 		color: var(--text);
 		transition: color var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 	}
 
 	a:hover {
 		color: var(--accent);
 	}
 
-  .left a {
-    font-size: 1.4em;
-    max-width: 32ch;
-    display: block;
+  .title {
+    flex: 1;
+		font-weight: bold;
   }
 
   .metadata-row {
     color: #777;
-  }
-
-  @media screen and (max-width: 1000px) {
-    li {
-      grid-template-columns: 1fr;
-    }
+    font-size: .8em;
+    font-weight: normal;
   }
 </style>

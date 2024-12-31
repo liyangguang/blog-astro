@@ -50,6 +50,8 @@ const posts = Astro.props.posts;
 		font-weight: bold;
 		color: var(--text);
 		transition: color var(--transition);
+    height: 100%;
+    width: 100%;
 	}
 
 	a:hover {
@@ -74,6 +76,7 @@ const posts = Astro.props.posts;
   @media screen and (max-width: 1000px) {
     li {
       grid-template-columns: 1fr;
+      gap: .5em;
     }
   }
 </style>

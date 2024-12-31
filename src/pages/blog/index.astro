@@ -13,10 +13,20 @@ const shortTils = allBlogs.filter((blog) => blog.data.isTil);
 ---
 
 <BaseLayout>
+	<style slot="style">
+		.title-til {
+			margin-top: 0;
+		}
+
+		.title-long {
+			margin-top: 3em;
+		}
+	</style>
+
 	<main>
-		<h2>TIL - short nuggets</h2>
+		<h2 class="title-til">TIL - short nuggets</h2>
 		<TilList posts={shortTils}></TilList>
-		<h2>Long posts</h2>
+		<h2 class="title-long">Deep dive articles</h2>
 		<BlogList posts={longPosts}></BlogList>
 	</main>
 </BaseLayout>
