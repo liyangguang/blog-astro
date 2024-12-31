@@ -2,14 +2,21 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@src/BaseLayout.astro';
 import BlogList from '@components/BlogList.astro';
+import TilList from '@components/TilList.astro';
 
-const posts = (await getCollection('blog')).sort(
+const allBlogs = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const longPosts = allBlogs.filter((blog) => !blog.data.isTil);
+const shortTils = allBlogs.filter((blog) => blog.data.isTil);
 ---
 
 <BaseLayout>
 	<main>
-		<BlogList posts={posts}></BlogList>
+		<h2>TIL - short nuggets</h2>
+		<TilList posts={shortTils}></TilList>
+		<h2>Long posts</h2>
+		<BlogList posts={longPosts}></BlogList>
 	</main>
 </BaseLayout>

@@ -3,7 +3,7 @@ title: Critical "catch" on try-catch with async function
 pubDate: 2023-05-20
 tags:
   - JavaScript
-  - Short TIL
+isTil: true
 description: Can you notice the small detail that makes async try-catch fail to work?
 ---
 

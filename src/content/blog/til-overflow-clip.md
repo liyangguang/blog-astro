@@ -1,9 +1,9 @@
 ---
-title: TIL - overflow clip
+title: overflow clip
 pubDate: 2023-04-25
 tags:
   - CSS
-  - Short TIL
+isTil: true
 description: An elegant way to solve overflow + padding
 ---
 

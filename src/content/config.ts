@@ -14,6 +14,7 @@ const blog = defineCollection({
 			.transform((str) => (str ? new Date(str) : undefined)),
 		tags: z
 			.array(z.string()),
+		isTil: z.boolean().optional(),  // is short TIL
 		heroImage: z
 			.string()
 			.optional(),
