@@ -242,6 +242,34 @@ But, there're also many issues and considerations:
 - **Stuck in the process**: Another common issue is agent can keep repeating a few steps and cannot figure out how to move forward.
 - **Security**: When you give agent access to some tools like full browser control, terminal control, etc. there's the risk of it doing unexpected actions.
 
+### Agent planning
+
+In real use cases, to make the agent work more reliably, many brilliant minds came up with useful prompt instructions.
+
+Here is one example from [langchain's agent](https://github.com/langchain-ai/langchainjs/blob/main/langchain/src/agents/mrkl/prompt.ts):
+
+```js
+export const PREFIX = `Answer the following questions as best you can. You have access to the following tools:`;
+export const FORMAT_INSTRUCTIONS = `Use the following format in your response:
+
+Question: the input question you must answer
+Thought: you should always think about what to do
+Action: the action to take, should be one of [{tool_names}]
+Action Input: the input to the action
+Observation: the result of the action
+... (this Thought/Action/Action Input/Observation can repeat N times)
+Thought: I now know the final answer
+Final Answer: the final answer to the original input question`;
+export const SUFFIX = `Begin!
+
+Question: {input}
+Thought:{agent_scratchpad}`;
+```
+
+It's more structured, and provides clear guidence on how to make a plan, and follow it to get to the end result.
+
+It's the art of prompt engineering, and many many techniques to improve it. I won't expand too much here.
+
 ## Overall comparison
 
 |  | Structured function calling | Execute functions | Function runs on | Iterative running |
