@@ -4,7 +4,6 @@ pubDate: 2023-05-20
 tags:
   - JavaScript
 isTil: true
-description: Can you notice the small detail that makes async try-catch fail to work?
 ---
 
 Okay, read the code below, can you notice the issue with `function run()`?

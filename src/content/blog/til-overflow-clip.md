@@ -4,7 +4,6 @@ pubDate: 2023-04-25
 tags:
   - CSS
 isTil: true
-description: An elegant way to solve overflow + padding
 ---
 
 A very common design - a card with some content inside, and the content should be truncated if too long, but the card should have padding around, including bottom. (Example below)
