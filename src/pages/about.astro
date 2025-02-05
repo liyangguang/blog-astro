@@ -5,17 +5,17 @@ const CONTACT = [
 	{label: '812-360-1622', url: 'tel:+18123601622'},
 	{label: 'liyangguangcn@gmail.com', url: 'mailto:liyangguangcn@gmail.com'},
 	{label: 'yangguang.li', url: 'https://yangguang.li'},
-	{label: 'linkedin.com/in/yangguangli/', url: 'https://linkedin.com/in/yangguangli/'},
+	{label: 'linkedin.com/in/yangguangli', url: 'https://linkedin.com/in/yangguangli'},
 ];
 
 const EXPERIENCES = [
 	{
-		company: 'Google',
+		company: 'Google DeepMind',
 		position: 'Staff Software Engineer',
 		time: 'Dec 2024 - Present',
 		location: 'Sunnyvale, CA',
 		details: [
-			`Frontend Tech Lead for Gemini playground - Google AI Studio (https://ai.google.dev/aistudio)`
+			`Tech Lead for Gemini playground - <a href="https://ai.google.dev/aistudio" target="_blank" rel="noopener noreferrer">Google AI Studio</a>.`,
 		],
 		tech: ['Angular', 'Gemini API'],
 	},
@@ -156,11 +156,19 @@ const EDUCATION = [
 
 		.contacts {
 			display: flex;
-			gap: 1em;
+			margin: .5em 0;
 		}
 
 		.contacts li {
-			margin: .3em 0;
+			padding: 0 1em;
+
+			&:not(:last-child) {
+				border-right: 1px solid #aaa;
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
 		}
 		.contacts li a {
 			color: inherit;
