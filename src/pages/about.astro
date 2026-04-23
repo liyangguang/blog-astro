@@ -2,8 +2,8 @@
 import BaseLayout from '@src/BaseLayout.astro';
 
 const CONTACT = [
+	{label: 'hi@yangguang.li', url: 'mailto:hi@yangguang.li'},
 	{label: '812-360-1622', url: 'tel:+18123601622'},
-	{label: 'liyangguangcn@gmail.com', url: 'mailto:liyangguangcn@gmail.com'},
 	{label: 'yangguang.li', url: 'https://yangguang.li'},
 	{label: 'linkedin.com/in/yangguangli', url: 'https://linkedin.com/in/yangguangli'},
 ];
@@ -11,9 +11,9 @@ const CONTACT = [
 const EXPERIENCES = [
 	{
 		company: 'Google DeepMind',
-		position: 'Staff Software Engineer',
+		position: 'Senior Staff Software Engineer',
 		time: 'Dec 2024 - Present',
-		location: 'Sunnyvale, CA',
+		location: 'Mountain View, CA',
 		details: [
 			`Tech Lead of <a href="https://ai.google.dev/aistudio" target="_blank" rel="noopener noreferrer">Google AI Studio</a>, overseeing and mentoring a team of engineers working on various features in AI Studio.`,
 			`Developed new Gemini model feature support in AI Studio - thinking budget, live conversation features, tool use.`,
@@ -233,7 +233,7 @@ const EDUCATION = [
 	<main>
 		<div class="header">
 			<p>
-				<span class="first-name">Yangguang</span>
+				<span class="first-name">Yangguang (YG)</span>
 				<span class="last-name">Li</span>
 			</p>
 			<ul class="contacts">
@@ -244,7 +244,7 @@ const EDUCATION = [
 			<div>
 				<div class="mobile-line-wrap">
 					<p class="position">{exp.position}</p>
-					<p class="section-title">{exp.company}</p>
+					<p class="section-title">@{exp.company}</p>
 				</div>
 				<div class="mobile-line-wrap">
 					<p class="metadata">{exp.time}</p>

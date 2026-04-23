@@ -1,14 +1,37 @@
 ---
 import HeaderLink from '@components/HeaderLink.astro';
-const today = new Date();
+
+const links = [
+  {
+    href: "https://www.linkedin.com/in/yangguangli/",
+    label: "LinkedIn",
+  },
+  {
+    href: "mailto:hi@yangguang.li",
+    label: "Email",
+  },
+  {
+    href: "https://github.com/liyangguang",
+    label: "GitHub",
+  },
+  {
+    href: "https://twitter.com/LYangguang",
+    label: "Twitter",
+  },
+  {
+    href: "/rss.xml",
+    label: "RSS",
+  },
+];
+
 ---
 
 <footer>
-	<HeaderLink href="https://twitter.com/LYangguang" external>Twitter</HeaderLink>
-	<HeaderLink href="https://github.com/liyangguang" external>GitHub</HeaderLink>
-	<HeaderLink href="https://www.linkedin.com/in/yangguangli/" external>LinkedIn</HeaderLink>
-	<HeaderLink href="mailto:liyangguangcn@gmail.com" external>Email</HeaderLink>
-	<HeaderLink href="/rss.xml" external>RSS</HeaderLink>
+  {links.map((link) => (
+    <HeaderLink href={link.href} external>
+      {link.label}
+    </HeaderLink>
+  ))}
 </footer>
 
 <style>
